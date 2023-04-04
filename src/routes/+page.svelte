@@ -103,11 +103,9 @@
 	<meta name="description" content={siteInfo.metaDescription} />
 </svelte:head>
 
-<div id="home">
-	<Banner title={siteInfo.title} description={siteInfo.description} />
-</div>
+<Banner title={siteInfo.title} description={siteInfo.description} />
 
-<div id="about">
+<div id="/about">
 	<ContentBlock
 		title="About Me"
 		description={aboutMe.basicInfo.description}
@@ -124,7 +122,7 @@
 	<ContentList title="Social Media" entries={socialMedia} />
 </div>
 
-<div id="projects">
+<div>
 	<hr id="/projects" />
 
 	<div>

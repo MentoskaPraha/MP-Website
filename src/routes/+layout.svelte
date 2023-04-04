@@ -43,7 +43,7 @@
 					inline: "nearest",
 					behavior: "auto"
 				});
-				window.scrollBy({ top: -56, left: 0, behavior: "auto" });
+				window.scrollBy({ top: -76, left: 0, behavior: "auto" });
 				break;
 			}
 			case "/projects": {
