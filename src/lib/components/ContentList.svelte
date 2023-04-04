@@ -30,7 +30,11 @@
 				index = 1;
 				extraLeft = true;
 				extraRight = true;
-				if (entries.length > 3) buttons = true;
+				if (entries.length > 3){
+					buttons = true;
+				} else{
+					buttons = false;
+				}
 				return;
 			}
 		} else {
