@@ -29,7 +29,22 @@ npm run build
 
 This will create a folder called build and the files inside this folder can be uploaded to your hosting provider.
 
-> **Make sure to upload the files, not the folder!**
+> **Make sure to upload the files, not the folder!**  
+
+If you are using Github, you can use Github pages to deploy the project. First configure Github pages in your repository settings on Github. You can find a guide on how to do that [here](https://docs.github.com/en/pages).  
+
+After that you will need to create a `.env` file in the root of your project. It should look something like this:
+
+```.env
+DEPLOY_REPO="LINK TO YOUR REPOSITORY HERE(MAKE SURE TO ADD .git AT THE END)"
+DEPLOY_USERNAME="YOUR GITHUB USERNAME HERE"
+DEPLOY_EMAIL="YOUR GITHUB EMAIL ADDRESS HERE"
+```
+
+After that you can run the following to deploy the site to Github pages:
+```sh
+npm run deploy
+```
 
 ### Changing Images
 

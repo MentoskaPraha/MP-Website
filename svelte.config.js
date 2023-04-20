@@ -10,7 +10,11 @@ const config = {
 	outDir: "public/",
 
 	kit: {
-		adapter: adapter()
+		adapter: adapter({
+			pages: "build",
+			assets: "build",
+			fallback: null
+		})
 	}
 };
 

@@ -1,0 +1,20 @@
+import { publish } from "gh-pages";
+
+import { config } from "dotenv";
+config();
+
+publish(
+	"build",
+	{
+		branch: "gh-pages",
+		repo: process.env.DEPLOY_REPO,
+		user: {
+			name: process.env.DEPLOY_USERNAME,
+			email: process.env.DEPLOY_EMAIL
+		},
+		dotfiles: true
+	},
+	() => {
+		console.log("Deploy Complete!");
+	}
+);
