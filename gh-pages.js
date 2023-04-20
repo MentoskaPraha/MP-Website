@@ -1,8 +1,5 @@
 import { publish } from "gh-pages";
 
-import { config } from "dotenv";
-config();
-
 publish(
 	"build",
 	{
