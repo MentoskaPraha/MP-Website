@@ -9,7 +9,7 @@ publish(
 			name: process.env.DEPLOY_USERNAME,
 			email: process.env.DEPLOY_EMAIL
 		},
-		dotfiles: true
+		dotfiles: false
 	},
 	() => {
 		console.log("Deploy Complete!");
