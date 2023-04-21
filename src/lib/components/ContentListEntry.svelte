@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from "$app/paths";
 	import { fade } from "svelte/transition";
 
 	export let title = "";
@@ -21,7 +22,7 @@
 		{#if displayImage}
 			<img
 				class="h-72 w-72 bg-white border-neutral-700 border-solid border-4 mb-3"
-				src={image}
+				src="{base}{image}"
 				alt="Representation of entry in content list."
 				draggable="false"
 			/>
@@ -45,7 +46,7 @@
 		{#if displayImage}
 			<img
 				class="h-72 w-72 bg-white border-neutral-700 border-solid border-4 mb-3"
-				src={image}
+				src="{base}{image}"
 				alt="Representation of entry in content list."
 			/>
 		{/if}

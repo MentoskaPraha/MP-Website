@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from "$app/paths";
 	import { createEventDispatcher } from "svelte";
 
 	export let errorLeft = false;
@@ -22,7 +23,7 @@
 	>
 		<img
 			class="w-16 h-16 rounded-full {errorLeft ? 'bg-red-600' : ''}"
-			src="/images/arrow-left.svg"
+			src="{base}/images/arrow-left.svg"
 			alt="Left arrow."
 		/>
 	</button>
@@ -33,7 +34,7 @@
 	>
 		<img
 			class="w-16 h-16 rounded-full {errorRight ? 'bg-red-600' : ''}"
-			src="/images/arrow-right.svg"
+			src="{base}/images/arrow-right.svg"
 			alt="Left arrow."
 		/>
 	</button>

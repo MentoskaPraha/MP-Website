@@ -5,6 +5,7 @@
 	import { quotes, siteInfo, legal } from "$lib/assets/content.json";
 	import { page } from "$app/stores";
 	import { goto } from "$app/navigation";
+	import { base } from "$app/paths";
 
 	const navLinks = [
 		{
@@ -77,6 +78,34 @@
 <svelte:head>
 	<meta name="keywords" content={siteInfo.keywords} />
 	<meta name="author" content={siteInfo.author} />
+
+	<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="{base}/icons/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="{base}/icons/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="{base}/icons/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="{base}/icons/site.webmanifest" />
+		<link
+			rel="mask-icon"
+			href="{base}/icons/safari-pinned-tab.svg"
+			color="#606060"
+		/>
+		<link rel="shortcut icon" href="{base}/icons/favicon.ico" />
+		<meta name="msapplication-TileColor" content="#ffffff" />
+		<meta name="msapplication-config" content="{base}/icons/browserconfig.xml" />
+		<meta name="theme-color" content="#ffffff" />
 </svelte:head>
 
 <nav class="fixed top-0 z-50 w-full">
@@ -84,7 +113,7 @@
 		<ul class="flex place-items-center m-1">
 			<li class="inline">
 				<img
-					src="/images/siteLogo.svg"
+					src="{base}/images/siteLogo.svg"
 					alt="Page logo."
 					class="bg-white w-8 h-8 mr-1 md:ml-2"
 				/>

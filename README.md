@@ -41,11 +41,21 @@ DEPLOY_USERNAME="YOUR GITHUB USERNAME HERE"
 DEPLOY_EMAIL="YOUR GITHUB EMAIL ADDRESS HERE"
 ```
 
+Before you deploy the website you'll have to change the paths object in `svelte.congi.js` like so:
+
+```js
+paths: {
+	base: process.env.NODE_ENV === "production" ? "/NAME OF YOUR GITHUB REPOSIRTORY HERE" : "",
+}
+```
+
 After that you can run the following to deploy the site to Github pages:
 
 ```sh
 npm run deploy
 ```
+
+If you're adding a custom domain you can create a file called `CNAME` in the static folder and on one line add the domain you wish to use. This file will not be commited to Github.
 
 ### Changing Images
 

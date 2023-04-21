@@ -52,12 +52,6 @@
 				"link": "https://www.typescriptlang.org"
 			},
 			{
-				"title": "Vercel",
-				"image": "/images/logos/vercel-favicon.svg",
-				"description": "Vercel is a hosting platform for websites and other such applications.",
-				"link": "https://vercel.com/"
-			},
-			{
 				"title": "MongoDB",
 				"image": "/images/logos/mongodb-logo.svg",
 				"description": "MongoDB is a document based database used to store user data.",

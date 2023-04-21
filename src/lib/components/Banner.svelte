@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from "$app/paths";
 	import { onMount } from "svelte";
 
 	//banner variables
@@ -22,9 +23,10 @@
 
 <div
 	bind:this={bannerElement}
-	class="mt-14 bg-black bg-[url('/images/banner.webp')] bg-cover bg-no-repeat bg-center flex justify-center items-center"
->
-	<h1 class="text-center text-4xl font-bold md:text-5xl lg:text-6xl">
+	class="banner mt-14 flex justify-center items-center bg-cover bg-no-repeat bg-center"
+	style="background-image: url({base}/images/banner.webp);"
+>	
+	<h1 class="text-center text-4xl font-bold md:text-5xl lg:text-6xl absolute z-20">
 		{title}
 	</h1>
 </div>
