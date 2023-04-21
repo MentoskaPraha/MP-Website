@@ -12,5 +12,3 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .firebaserc
 .firebase
-yarn.lock
-CNAME

@@ -16,13 +16,12 @@ jobs:
         with:
           node-version: 18
           cache: yarn
+          
 
       - name: Install dependencies
         run: yarn install
 
       - name: build
-        env:
-          BASE_PATH: '/your-repo-name'
         run: yarn run build
 
       - name: Upload Artifacts
