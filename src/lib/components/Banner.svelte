@@ -25,8 +25,10 @@
 	bind:this={bannerElement}
 	class="banner mt-14 flex justify-center items-center bg-cover bg-no-repeat bg-center"
 	style="background-image: url({base}/images/banner.webp);"
->	
-	<h1 class="text-center text-4xl font-bold md:text-5xl lg:text-6xl absolute z-20">
+>
+	<h1
+		class="text-center text-4xl font-bold md:text-5xl lg:text-6xl absolute z-20"
+	>
 		{title}
 	</h1>
 </div>

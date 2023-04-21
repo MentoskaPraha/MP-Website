@@ -10,10 +10,7 @@ const config = {
 	outDir: "public/",
 
 	kit: {
-		adapter: adapter(),
-		paths: {
-			base: ""
-		}
+		adapter: adapter()
 	}
 };
 

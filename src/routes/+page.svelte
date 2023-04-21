@@ -9,6 +9,7 @@
 	import ContentList from "$lib/components/ContentList.svelte";
 	import SpecificView from "$lib/components/SpecificView.svelte";
 	import Banner from "$lib/components/Banner.svelte";
+	import { base } from "$app/paths";
 
 	//setup about section
 	const socialMedia: contentListEntry[] = [];
@@ -106,12 +107,21 @@
 <Banner title={siteInfo.title} description={siteInfo.description} />
 
 <div id="/about">
-	<ContentBlock
-		title="About Me"
-		description={aboutMe.basicInfo.description}
-		image={aboutMe.basicInfo.image}
-		links={false}
-	/>
+	<div
+		class="m-4 mx-auto md:grid md:auto-cols-min md:grid-cols-2 md:items-center md:gap-4"
+	>
+		<img
+			src="{base}{aboutMe.basicInfo.image}"
+			alt="Represents the content displayed in this content block."
+			class="w-72 h-72 mx-auto mb-3 bg-white md:mb-0 md:mx-0 md:ml-auto"
+		/>
+		<section class="mx-auto w-72 md:w-80 md:mx-0 md:mr-auto">
+			<h2 class="text-center text-2xl font-bold underline">About Me</h2>
+			<p class="text-justify">
+				{@html aboutMe.basicInfo.description}
+			</p>
+		</section>
+	</div>
 
 	<hr />
 
@@ -154,10 +164,6 @@
 			external={featProject.external}
 		/>
 	</div>
-
-	<hr />
-
-	<ContentList title="Project List" entries={projectsList} />
 
 	<hr />
 

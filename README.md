@@ -40,9 +40,11 @@ DEPLOY_REPO="LINK TO YOUR REPOSITORY HERE(MAKE SURE TO ADD .git AT THE END)"
 DEPLOY_USERNAME="YOUR GITHUB USERNAME HERE"
 DEPLOY_EMAIL="YOUR GITHUB EMAIL ADDRESS HERE"
 ```
+
 To the deploy to Github pages, simple commit to the main branch and Github Actions will take it from there. If you're adding a custom domain you can create a file called `CNAME` in the static folder and on one line add the domain you wish to use. This file will not be commited to Github.
 
 ### Changing Images
+
 If you wish to change an image, simple replace the image and ensure it has the same name as before. Adding custom images is simple, just add the image and specify the path to it in the `content.json` file.
 
 ## Copyright
