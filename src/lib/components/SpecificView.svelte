@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 	import type { specificViewEntry } from "$lib/assets/types";
-	import ContentListEntry from "$lib/components/ContentListEntry.svelte";
 	import { fade } from "svelte/transition";
 	import ContentBlock from "./ContentBlock.svelte";
 	import ContentListButtons from "./ContentListButtons.svelte";
+	import { base } from "$app/paths";
 
 	export let title = "Specific View";
 	export let entries: specificViewEntry[] = [];
@@ -55,11 +55,25 @@
 		<div class="mx-4 lg:w-72">
 			{#each [entries[index]] as item (index)}
 				{#key index}
-					<ContentListEntry
-						title={item.title}
-						description={item.description}
-						image={item.image}
-					/>
+					<div
+						class="block w-72 mx-auto border-neutral-700 border-solid border-4 rounded-md"
+						draggable="false"
+						in:fade={{ delay: 0, duration: 500 }}
+					>
+						<img
+							class="h-72 w-72 bg-white border-neutral-700 border-solid border-4 mb-3"
+							src="{base}{item.image}"
+							alt="Representation of entry in content list."
+						/>
+						<section
+							class="p-2 border-neutral-700 border-solid border-4 bg-black text-center h-32 overflow-hidden"
+						>
+							<h3 class="mb-1 text-xl font-bold">
+								{item.title}
+							</h3>
+							<p class="line-clamp-3">{item.description}</p>
+						</section>
+					</div>
 				{/key}
 			{/each}
 
