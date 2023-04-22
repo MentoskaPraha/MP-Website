@@ -60,7 +60,7 @@
 			{
 				"title": "Sveltekit",
 				"image": "/images/logos/sveltekit-logo.svg",
-				"description": "Sveltekit is a framework used for making websites.",
+				"description": "Sveltekit is a web framework used for making websites.",
 				"link": "https://kit.svelte.dev"
 			},
 			{
@@ -68,6 +68,12 @@
 				"image": "/images/logos/tailwindcss-logo.svg",
 				"description": "Tailwind CSS is a CSS utility for making website styling easier by adding pre-made CSS classes.",
 				"link": "https://tailwindcss.com"
+			},
+			{
+				"title": "Astro",
+				"image": "/images/logos/astro-logo.svg",
+				"description": "Astro is a web framework that can be used with other frameworks to make websites.",
+				"link": "https://astro.build"
 			}
 		]
 	},
@@ -78,7 +84,7 @@
 			{
 				"id": "mp-website",
 				"title": "MP's Website",
-				"description": "This website is my personal website. I use it to display the things I've worked on. The website is made using Sveltekit and is deployed using Vercel.",
+				"description": "This website is my personal website. I use it to display the things I've worked on. The website is made using Astro and Svelte and is deployed using Github Pages.",
 				"image": "/images/siteLogo.svg",
 				"git": "https://github.com/MentoskaPraha/MP-Website",
 				"external": "none"

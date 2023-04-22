@@ -1,9 +1,8 @@
 <script lang="ts" setup>
-	import type { specificViewEntry } from "$lib/assets/types";
+	import type { specificViewEntry } from "../types";
 	import { fade } from "svelte/transition";
 	import ContentBlock from "./ContentBlock.svelte";
 	import ContentListButtons from "./ContentListButtons.svelte";
-	import { base } from "$app/paths";
 
 	export let title = "Specific View";
 	export let entries: specificViewEntry[] = [];
@@ -62,7 +61,7 @@
 					>
 						<img
 							class="h-72 w-72 bg-white border-neutral-700 border-solid border-4 mb-3"
-							src="{base}{item.image}"
+							src={item.image}
 							alt="Representation of entry in content list."
 						/>
 						<section

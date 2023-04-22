@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-	import { base } from "$app/paths";
-
 	export let title = "";
 	export let description = "";
 	export let image = "";
@@ -13,7 +11,7 @@
 	class="m-4 mx-auto md:grid md:auto-cols-min md:grid-cols-2 md:items-center md:gap-4"
 >
 	<img
-		src="{base}{image}"
+		src={image}
 		alt="Represents the content displayed in this content block."
 		class="w-72 h-72 mx-auto mb-3 bg-white md:mb-0 md:mx-0 md:ml-auto"
 	/>
@@ -40,7 +38,7 @@
 							>
 							<img
 								class="w-14 h-14 hover:opacity-50 transition-opacity border-white border-4 rounded-full bg-white"
-								src="{base}/images/logos/github-mark.svg"
+								src="/images/logos/github-mark.svg"
 								alt="Copy link icon."
 							/>
 						</a>
@@ -61,7 +59,7 @@
 							>
 							<img
 								class="w-14 h-14 hover:opacity-50 transition-opacity border-white border-4 rounded-full bg-white"
-								src="{base}/images/externalLink.svg"
+								src="/images/externalLink.svg"
 								alt="Copy link icon."
 							/>
 						</a>

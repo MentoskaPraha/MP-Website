@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-	import type { contentListEntry } from "$lib/assets/types";
+	import type { contentListEntry } from "../types";
 	import { onMount } from "svelte";
-	import ContentListEntry from "$lib/components/ContentListEntry.svelte";
+	import ContentListEntry from "./ContentListEntry.svelte";
 	import ContentListButtons from "./ContentListButtons.svelte";
 
 	export let title = "";

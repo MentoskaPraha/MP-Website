@@ -1,0 +1,22 @@
+---
+import "../styles/global.css";
+import { siteInfo } from "../content.json";
+import BaseBody from "../components/baseBody.astro";
+import BaseHead from "../components/baseHead.astro";
+import PageLayout from "../layouts/pageLayout.astro";
+import Banner from "../components/Banner.svelte";
+
+const title = `Error 404 | ${siteInfo.title}`;
+const metaDescription = `The page you are looking for on ${siteInfo.title} was not found.`;
+---
+
+<!DOCTYPE html>
+<html>
+	<BaseHead title={title} metaDescription={metaDescription} />
+
+	<BaseBody>
+		<PageLayout>
+			<Banner title="Error 404" description="Not Found" client:load />
+		</PageLayout>
+	</BaseBody>
+</html>

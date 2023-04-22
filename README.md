@@ -7,7 +7,7 @@ This website is designed to be hosted on any static deployment platform.
 ## Deployment
 
 To deploy this website for yourself, simple clone the Github repository and customize the `content.json` file located in:  
-`/src/lib/assets/content.json`
+`/src/content.json`
 
 Before deploying you will need to install the project dependancies by running the following in your terminal at the project location:
 
@@ -21,6 +21,8 @@ After you can run the following command to start a local server where your chang
 npm run dev
 ```
 
+Before we can build the project, we must edit the `astro.config.mjs` file. Make sure to change the `site` option to the url of your website.
+
 Once you are happy with the changes you can run the following to build the project:
 
 ```shh
@@ -33,15 +35,7 @@ This will create a folder called build and the files inside this folder can be u
 
 If you are using Github, you can use Github pages to deploy the project. First configure Github pages in your repository settings on Github. You can find a guide on how to do that [here](https://docs.github.com/en/pages).
 
-After that you will need to create a `.env` file in the root of your project. It should look something like this:
-
-```.env
-DEPLOY_REPO="LINK TO YOUR REPOSITORY HERE(MAKE SURE TO ADD .git AT THE END)"
-DEPLOY_USERNAME="YOUR GITHUB USERNAME HERE"
-DEPLOY_EMAIL="YOUR GITHUB EMAIL ADDRESS HERE"
-```
-
-To the deploy to Github pages, simple commit to the main branch and Github Actions will take it from there. If you're adding a custom domain you can create a file called `CNAME` in the static folder and on one line add the domain you wish to use. This file will not be commited to Github.
+To the deploy to Github pages, simple commit to the main branch and Github Actions will take it from there. If you are using the default URL provided by Github Pages make sure to update the `base` option in the `astro.config.mjs` file to `/your repo name` also update the `site` option to `https://YOUR_GITHUB_USERNAME.github.io`.
 
 ### Changing Images
 

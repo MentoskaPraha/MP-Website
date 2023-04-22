@@ -1,11 +1,7 @@
 <script lang="ts">
-	import "$lib/assets/styles.css";
 	import { fly, fade } from "svelte/transition";
 	import { quintOut } from "svelte/easing";
-	import { quotes, siteInfo, legal } from "$lib/assets/content.json";
-	import { page } from "$app/stores";
-	import { goto } from "$app/navigation";
-	import { base } from "$app/paths";
+	import { siteInfo } from "../content.json";
 
 	const navLinks = [
 		{
@@ -23,11 +19,7 @@
 	];
 
 	//scroll functionality
-	let route = $page.route.id as string;
-
 	async function navigate(location: string) {
-		if (route != "/") await goto("/");
-
 		const aboutScroll = document.getElementById("/about") as HTMLElement;
 		const projectsScroll = document.getElementById(
 			"/projects"
@@ -69,54 +61,14 @@
 			menuState = false;
 		}
 	}
-
-	//functions to handle quotes
-	const quoteNum = Math.floor(Math.random() * quotes.length);
-	const quote = quotes[quoteNum];
 </script>
-
-<svelte:head>
-	<meta name="keywords" content={siteInfo.keywords} />
-	<meta name="author" content={siteInfo.author} />
-
-	<link
-		rel="apple-touch-icon"
-		sizes="180x180"
-		href="{base}/icons/apple-touch-icon.png"
-	/>
-	<link
-		rel="icon"
-		type="image/png"
-		sizes="32x32"
-		href="{base}/icons/favicon-32x32.png"
-	/>
-	<link
-		rel="icon"
-		type="image/png"
-		sizes="16x16"
-		href="{base}/icons/favicon-16x16.png"
-	/>
-	<link rel="manifest" href="{base}/icons/site.webmanifest" />
-	<link
-		rel="mask-icon"
-		href="{base}/icons/safari-pinned-tab.svg"
-		color="#606060"
-	/>
-	<link rel="shortcut icon" href="{base}/icons/favicon.ico" />
-	<meta name="msapplication-TileColor" content="#ffffff" />
-	<meta
-		name="msapplication-config"
-		content="{base}/icons/browserconfig.xml"
-	/>
-	<meta name="theme-color" content="#ffffff" />
-</svelte:head>
 
 <nav class="fixed top-0 z-50 w-full">
 	<div class="flex flex-wrap bg-gray-300 relative z-50 h-14">
 		<ul class="flex place-items-center m-1">
 			<li class="inline">
 				<img
-					src="{base}/images/siteLogo.svg"
+					src="/images/siteLogo.svg"
 					alt="Page logo."
 					class="bg-white w-8 h-8 mr-1 md:ml-2"
 				/>
@@ -168,12 +120,21 @@
 			<ul class="place-items-center flex justify-center text-white">
 				{#each navLinks as item}
 					<li class="inline">
-						<button
-							on:click={() => navigate(item.location)}
-							class="bg-gray-900 m-1 p-2 rounded hover:opacity-50 transition-opacity"
-						>
-							{item.name}
-						</button>
+						{#if document.location.pathname == "/"}
+							<button
+								on:click={() => navigate(item.location)}
+								class="bg-gray-900 h-10 m-1 p-2 rounded hover:opacity-50 transition-opacity"
+							>
+								{item.name}
+							</button>
+						{:else}
+							<a
+								href="/"
+								class="bg-gray-900 inline-block h-10 m-1 p-2 rounded hover:opacity-50 transition-opacity"
+							>
+								{item.name}
+							</a>
+						{/if}
 					</li>
 				{/each}
 			</ul>
@@ -189,37 +150,6 @@
 		</button>
 	{/if}
 </nav>
-
-<main>
-	<slot />
-</main>
-
-<footer class="bg-black pb-4">
-	<ul class="p-4">
-		<li>
-			<p class="text-center text-2xl">"{quote.content}"</p>
-		</li>
-		<li>
-			<p class="text-center text-lg">- {quote.author}</p>
-		</li>
-	</ul>
-
-	<ul class="md:grid md:grid-cols-2 md:gap-4 md:mx-4">
-		<li class="grid auto-rows-auto gap-1 m-4">
-			<h2 class="text-center text-3xl font-bold">Privacy Policy</h2>
-			<p class="text-justify">
-				{legal.privacy_policy}
-			</p>
-		</li>
-
-		<li class="grid auto-rows-auto gap-1 m-4">
-			<h2 class="text-center text-3xl font-bold">Copyright</h2>
-			<p class="text-justify">
-				{legal.copyright}
-			</p>
-		</li>
-	</ul>
-</footer>
 
 <style scoped>
 	.nav-button,
