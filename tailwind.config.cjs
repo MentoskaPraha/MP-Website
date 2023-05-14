@@ -2,7 +2,11 @@
 module.exports = {
 	content: ["./src/**/*.{astro,html,svelte}"],
 	theme: {
-		extend: {}
+		extend: {
+			colors: {
+				tedRed: "#EB0028"
+			}
+		}
 	},
 	plugins: []
 };

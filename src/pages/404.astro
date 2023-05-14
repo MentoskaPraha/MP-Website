@@ -5,14 +5,16 @@ import BaseBody from "../components/baseBody.astro";
 import BaseHead from "../components/baseHead.astro";
 import PageLayout from "../layouts/pageLayout.astro";
 import Banner from "../components/Banner.svelte";
-
-const title = `Error 404 | ${siteInfo.title}`;
-const metaDescription = `The page you are looking for on ${siteInfo.title} was not found.`;
 ---
 
 <!DOCTYPE html>
 <html>
-	<BaseHead title={title} metaDescription={metaDescription} />
+	<BaseHead
+		title={"Error 404 | " + siteInfo.title}
+		metaDescription={"The page you are looking for on " +
+			siteInfo.title +
+			" was not found."}
+	/>
 
 	<BaseBody>
 		<PageLayout>

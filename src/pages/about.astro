@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import { siteInfo, event, about } from "../content.json";
+import { siteInfo, about } from "../content.json";
 import BaseBody from "../components/baseBody.astro";
 import BaseHead from "../components/baseHead.astro";
 import PageLayout from "../layouts/pageLayout.astro";
@@ -11,45 +11,41 @@ import ContentListEntry from "../components/ContentListEntry.svelte";
 <!DOCTYPE html>
 <html>
 	<BaseHead
-		title={siteInfo.title}
-		metaDescription={siteInfo.metaDescription}
+		title={"About | " + siteInfo.title}
+		metaDescription={about.metaDescription}
 	/>
 
 	<BaseBody>
 		<PageLayout>
-			<Banner
-				title={siteInfo.title}
-				description={siteInfo.description}
-				client:load
-			/>
-
-			<div class="m-4">
-				<h2 class="text-center font-bold text-2xl underline mb-2">
-					What is TEDx?
-				</h2>
-				<p class="text-justify md:w-1/2 md:mx-auto xl:w-1/3 2xl:w-1/4">
-					In the spirit of ideas worth spreading, TED has created a
-					program called TEDx. TEDx is a program of local,
-					self-organized events that bring people together to share a
-					TED-like experience. Our event is called TEDx[name], where x
-					= independently organized TED event. At our TEDx[name]
-					event, TED Talks video and live speakers will combine to
-					spark deep discussion and connection in a small group. The
-					TED Conference provides general guidance for the TEDx
-					program, but individual TEDx events, including ours, are
-					self-organized.
-					<br /><br />
-					Find out more at the <a
-						href="https://www.ted.com/tedx"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="text-blue-600 underline">TEDx Official Website</a
-					>.
-				</p>
-			</div>
-
+			<Banner title="About" description={about.description} client:load />
 			<div class="md:flex md:w-screen my-4">
-				<div class="md:w-1/2 mx-4">
+				<div class="md:w-1/3 mx-4">
+					<h2 class="text-center font-bold text-2xl underline mb-2">
+						What is TEDx?
+					</h2>
+					<p class="text-justify">
+						In the spirit of ideas worth spreading, TED has created
+						a program called TEDx. TEDx is a program of local,
+						self-organized events that bring people together to
+						share a TED-like experience. Our event is called
+						TEDx[name], where x = independently organized TED event.
+						At our TEDx[name] event, TED Talks video and live
+						speakers will combine to spark deep discussion and
+						connection in a small group. The TED Conference provides
+						general guidance for the TEDx program, but individual
+						TEDx events, including ours, are self-organized.
+						<br /><br />
+						Find out more at the <a
+							href="https://www.ted.com/tedx"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="text-blue-600 underline"
+							>TEDx Official Website</a
+						>.
+					</p>
+				</div>
+
+				<div class="md:w-1/3 mx-4">
 					<h2 class="text-center font-bold text-2xl underline mb-2">
 						About TEDx
 					</h2>
@@ -66,7 +62,7 @@ import ContentListEntry from "../components/ContentListEntry.svelte";
 						certain rules and regulations.)
 					</p>
 				</div>
-				<div class="md:w-1/2 mx-4">
+				<div class="md:w-1/3 mx-4">
 					<h2 class="text-center font-bold text-2xl underline mb-2">
 						About TED
 					</h2>
@@ -182,68 +178,6 @@ import ContentListEntry from "../components/ContentListEntry.svelte";
 							class="text-blue-600 underline">LinkedIn</a
 						>.
 					</p>
-				</div>
-			</div>
-
-			<div class="md:flex md:w-screen mt-8 my-4">
-				<div
-					class="my-4 md:my-0 md:w-1/2 mx-auto md:grid md:auto-cols-min md:grid-cols-2 md:items-start md:gap-4"
-				>
-					<iframe
-						width="288"
-						height="288"
-						src="https://www.youtube-nocookie.com/embed/UFL57Es4mn8"
-						title="Previous TEDx Talk at AISB"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-						allowfullscreen
-						class="mx-auto mb-3 bg-white md:mb-0 md:mx-0 md:ml-auto"
-					></iframe>
-					<section class="mx-auto w-72 md:w-80 md:mx-0 md:mr-auto">
-						<h2 class="text-center text-2xl font-bold underline">
-							TEDx at AISB
-						</h2>
-						<p class="text-justify">
-							TEDx has occured at AISB a few times before and one
-							of the most famous talks is about empowerment by
-							David Hughes where he shares his experience of how
-							his journey into fatherhood coincided with his
-							educational focus of empowering students. He shares,
-							what he believes, are the top five most important
-							skills to empower children and young adults and
-							details real-life examples of how these skills can
-							be put into practice in both teenagers and two-year
-							olds alike!
-						</p>
-					</section>
-				</div>
-
-				<div
-					class="mx-auto my-4 md:my-0 md:w-1/2 md:mx-5 md:grid md:auto-cols-min md:grid-cols-2 md:items-start md:gap-4"
-				>
-					<iframe
-						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2844.2872785596055!2d26.14211287565254!3d44.529750095300365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b21d456c0b18cb%3A0x6cc1920e1563e4d7!2sAISB%20SCHOOL!5e0!3m2!1sen!2sro!4v1684070993347!5m2!1sen!2sro"
-						width="288"
-						height="288"
-						style="border:0;"
-						allowfullscreen=""
-						loading="lazy"
-						referrerpolicy="no-referrer-when-downgrade"
-						class="mx-auto mb-3 bg-white md:mb-0 md:mx-0 md:ml-auto"
-					></iframe>
-					<section class="mx-auto w-72 md:mx-0 md:mr-auto">
-						<h2 class="text-center text-2xl font-bold underline">
-							This Year's Event
-						</h2>
-						<p class="text-left">
-							<br />
-							<strong>Theme:</strong>
-							{event.theme}<br /><br />
-							<strong>Date:</strong>
-							{event.date}<br /><br />
-							<strong>Location:</strong><br />
-							AISB SCHOOL, Bulevardul Pipera, Voluntar, Romaniai
-						</p>
-					</section>
 				</div>
 			</div>
 
