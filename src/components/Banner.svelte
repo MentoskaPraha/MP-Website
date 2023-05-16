@@ -26,7 +26,7 @@
 	style="background-image: url(/images/banner.webp); height: 500px"
 >
 	<h1
-		class="text-center text-4xl font-bold md:text-5xl lg:text-6xl absolute z-20 bg-tedRed"
+		class="text-center text-4xl font-bold md:text-5xl lg:text-6xl absolute z-20"
 	>
 		{title}
 	</h1>

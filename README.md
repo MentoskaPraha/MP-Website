@@ -1,6 +1,6 @@
-# TedX Website
+# MP-Website
 
-This is the code for a TedX Website, feel free to inspect it and submit changes if you find anything wrong with the code or know how to do something more efficiently. The website here is not only an example, but also the website for TedX at the American International School of Bucharest.
+This is the code for the MP's Official Website, feel free to inspect it and submit changes if you find anything wrong with the code or know how to do something more efficiently.
 
 This website is designed to be hosted on any static deployment platform.
 
@@ -48,13 +48,13 @@ This website is copyrighted under the MIT License and was made by MentoskaPraha 
 ### Image Source List
 
 -   icons/\*
-    -   Custom made by MentoskaPraha, with help from realfavicongenerator.net
+    -   Custom made by Gljue and MentoskaPraha, with help from realfavicongenerator.net
 -   logos/\*
     -   All logos not made by external parties.
 -   siteLogo.svg
-    -   Made with the TedX logo generator
+    -   Custom made by Gljue
 -   banner.webp
-    -   Picture from a TedX Confrence at AISB
+    -   Screenshot from Elite Dangerous by MentoskaPraha
 -   externalLink.svg
     -   Custom made by Gljue
 -   arrow-left.svg

@@ -1,47 +1,162 @@
 {
 	"siteInfo": {
-		"title": "Tedx AISB 2023",
-		"description": "Welcome to the official website for the 2023 Tedx event at the American International School of Bucharest. For event details, please check the event page and for speaker details please check the speakers page. Links to both can be found below.",
-		"metaDescription": "This is the official website for the 2023 TedxAmericanInternationalSchoolofBucharest event.",
-		"keywords": "tedx ted-talks American-International-School-Bucharest AISB Romania 2023",
+		"title": "MP's Official Website",
+		"description": "Welcome to my website. Here you can see all the projects I've worked on, some information about me and how to contact me. Enjoy your stay!",
+		"metaDescription": "This is MentoskaPraha's official website. Here you can view all the information about him you need, such as his social media accounts or the projects he's worked on.",
+		"keywords": "programmer personal portfolio",
 		"author": "MentoskaPraha"
 	},
 
-	"about": {
-		"description": "This is the about page, here you can see more information about Tedx and the conference.",
-		"metaDescription": "This is the about page for the 2023 TedxAmericanInternationalSchoolofBucharest event. Here you can see more information about Tedx and the conference.",
+	"aboutMe": {
+		"basicInfo": {
+			"description": "<strong>My name is:</strong> MentoskaPraha<br /><strong>I speak:</strong> English, French and Czech<br /><strong>My time zone is:</strong> GMT+2<br /><br /><p class='text-center'><strong>A little bit more about me: </strong><br /></p><p class='text-justify'>I'm an amateur programmer and average gamer. I almost always work on websites or API applications, but I do occasionally work on games not related to the web in any way. I like to play video games with my friends and we most commonly play game Sea of Thieves or Minecraft.</p>",
+			"image": "/images/siteLogo.svg"
+		},
 		"socialMedia": [
 			{
-				"title": "Instagram",
-				"description": "The Instagram account for this TEDx Event.",
-				"image": "/images/logos/instagram-logo.svg",
-				"link": "#",
-				"target": "_self"
+				"title": "Github",
+				"description": "My Github page. Here you can see all my repos.",
+				"image": "/images/logos/github-mark.svg",
+				"link": "https://github.com/MentoskaPraha"
+			},
+			{
+				"title": "Discord",
+				"description": "If you want to contact me via Discord, join this server.",
+				"image": "/images/logos/discord-mark-blue.svg",
+				"link": "https://discord.gg/QKSDMaYg5R"
+			}
+		],
+		"tech": [
+			{
+				"title": "VS-Codium",
+				"image": "/images/logos/vscodium-mark.svg",
+				"description": "VS-Codium is a fork of VS-Code, a program I use to write my code.",
+				"link": "https://vscodium.com/"
+			},
+			{
+				"title": "Github",
+				"image": "/images/logos/github-mark.svg",
+				"description": "Github is a source control tool used to share code.",
+				"link": "https://github.com"
+			},
+			{
+				"title": "Node.js",
+				"image": "/images/logos/nodejs-logo.svg",
+				"description": "Node.js is a back-end runtime used to execute Javascript on a server.",
+				"link": "https://nodejs.org"
+			},
+			{
+				"title": "Typescript",
+				"image": "/images/logos/ts-logo.svg",
+				"description": "Typescript is a Javascript addon that adds type safety to Javascript.",
+				"link": "https://www.typescriptlang.org"
+			},
+			{
+				"title": "MongoDB",
+				"image": "/images/logos/mongodb-logo.svg",
+				"description": "MongoDB is a document based database used to store user data.",
+				"link": "https://www.mongodb.com"
+			},
+			{
+				"title": "Sveltekit",
+				"image": "/images/logos/sveltekit-logo.svg",
+				"description": "Sveltekit is a web framework used for making websites.",
+				"link": "https://kit.svelte.dev"
+			},
+			{
+				"title": "Tailwind CSS",
+				"image": "/images/logos/tailwindcss-logo.svg",
+				"description": "Tailwind CSS is a CSS utility for making website styling easier by adding pre-made CSS classes.",
+				"link": "https://tailwindcss.com"
+			},
+			{
+				"title": "Astro",
+				"image": "/images/logos/astro-logo.svg",
+				"description": "Astro is a web framework that can be used with other frameworks to make websites.",
+				"link": "https://astro.build"
 			}
 		]
 	},
 
-	"event": {
-		"description": "This is the event page, here you can see more specific details about the conference.",
-		"metaDescription": "This is the event page for the 2023 TedxAmericanInternationalSchoolofBucharest event. Here you can see more specific information about the conference.",
-		"eventName": "AmericanInternationalSchoolofBucharest",
-		"year": "2023",
-		"theme": "Small Changes, Big Impacts.",
-		"date": "To Be Determined"
-	},
-
-	"speakers": {
-		"description": "This is the speakers page, here you can see more details about the speakers for this event.",
-		"metaDescription": "This is the speakers page for the 2023 TedxAmericanInternationalSchoolofBucharest event. Here you can see more details about the speakers for this event."
-	},
-
-	"sponsors": {
-		"description": "This is the sponsors page, here you can see more specific details about the sponsors of this conference.",
-		"metaDescription": "This is the sponsors page for the 2023 TedxAmericanInternationalSchoolofBucharest event. Here you can see more specific information about this conference."
+	"projects": {
+		"favProject": "big-chungus-bot",
+		"list": [
+			{
+				"id": "mp-website",
+				"title": "MP's Website",
+				"description": "This website is my personal website. I use it to display the things I've worked on. The website is made using Astro and Svelte and is deployed using Github Pages.",
+				"image": "/images/siteLogo.svg",
+				"git": "https://github.com/MentoskaPraha/MP-Website",
+				"external": "none"
+			},
+			{
+				"id": "big-chungus-bot",
+				"title": "Big Chungus Bot",
+				"description": "Big Chungus Bot is a API application for Discord build with Discord.js, Typescript and MongoDB. He's a general purpose Discord bot that can give users custom colors, roll dice and much more. You can check him out on Github or try him out to find out more.",
+				"image": "/images/projects/big-chungus-image.webp",
+				"git": "https://github.com/MentoskaPraha/Big-Chungus-Bot",
+				"external": "none"
+			}
+		]
 	},
 
 	"legal": {
-		"privacy_policy": "This website uses no cookie set by the creator. Your activity on this page is not monitored or tracked in any way by the creator. The creator is not responsible for cookies managed by 3rd party services, such as Youtube, Github or others.",
-		"copyright": "This website was made by MentoskaPraha using VSCode, Github and other open source tools. All images representing 3rd parties are not of the creator, but of the 3rd party they represent. This website is made and published under the MIT License."
-	}
+		"privacy_policy": "This website uses no cookie set by the creator. Your activity on this page is not monitored or tracked by the creator. The creator is not responsible for cookies managed by 3rd party services, such as Youtube, Github or others.",
+		"copyright": "This website was made by MentoskaPraha using VSCode, Github and other tools. All static image sources can be found in the README.md file on Github. This website is published under the MIT License."
+	},
+
+	"quotes": [
+		{
+			"content": "I didn't know dynamite explodes.",
+			"author": "MentoskaPraha"
+		},
+		{
+			"content": "Cold is just a state of mind.",
+			"author": "My G9 Principal"
+		},
+		{
+			"content": "Live long and prosper.",
+			"author": "Spock"
+		},
+		{
+			"content": "We are rich, yet we are poor.",
+			"author": "Hakainde Hichilema"
+		},
+		{
+			"content": "I know how it feels when everything you think is true becomes a lie!",
+			"author": "MentoskaPraha"
+		},
+		{
+			"content": "Weak people revenge, Strong people forgive, Intelligent people ignore.",
+			"author": "Albert Einstein"
+		},
+		{
+			"content": "How do you not dead.",
+			"author": "Gljue"
+		},
+		{
+			"content": "I'm not simping, I'm admiring art.",
+			"author": "MentoskaPraha"
+		},
+		{
+			"content": "Das uniet sovion.",
+			"author": "Gljue"
+		},
+		{
+			"content": "It's better to suffer with friends.",
+			"author": "MentoskaPraha"
+		},
+		{
+			"content": "I am ill... but you still work.",
+			"author": "My G10 English Teacher"
+		},
+		{
+			"content": "It's hard.",
+			"author": "Friend from G10 Math"
+		},
+		{
+			"content": "F*ck you Nvidia.",
+			"author": "Linus Torvald"
+		}
+	]
 }

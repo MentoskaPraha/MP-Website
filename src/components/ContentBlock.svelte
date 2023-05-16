@@ -8,7 +8,7 @@
 </script>
 
 <div
-	class="m-4 mx-auto md:grid md:auto-cols-min md:grid-cols-2 md:items-start md:gap-4"
+	class="m-4 mx-auto md:grid md:auto-cols-min md:grid-cols-2 md:items-center md:gap-4"
 >
 	<img
 		src={image}
