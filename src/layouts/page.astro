@@ -1,192 +1,90 @@
 ---
-import PageLayout from "./pageLayout.astro";
-import { siteInfo, aboutMe, projects } from "../content.json";
-import type {
-	contentListEntry,
-	projectObject,
-	specificViewEntry
-} from "../types";
-import ContentBlock from "../components/ContentBlock.svelte";
-import ContentList from "../components/ContentList.svelte";
-import SpecificView from "../components/SpecificView.svelte";
-import Banner from "../components/Banner.svelte";
-import { onMount } from "svelte";
+import Header from "@components/global/header.svelte";
+import Footer from "@components/global/footer.svelte";
+import { siteInfo } from "$config";
 
-//setup about section
-const socialMedia: contentListEntry[] = [];
-const techList: contentListEntry[] = [];
-
-for (let i = 0; i < aboutMe.tech.length; i++) {
-	let entry: contentListEntry;
-
-	const tech = aboutMe.tech[i];
-
-	entry = {
-		title: tech.title,
-		description: tech.description,
-		image: tech.image,
-		link: tech.link,
-		target: "_blank"
-	};
-
-	techList.push(entry);
-}
-
-for (let i = 0; i < aboutMe.socialMedia.length; i++) {
-	let entry: contentListEntry;
-
-	const social = aboutMe.socialMedia[i];
-
-	entry = {
-		title: social.title,
-		description: social.description,
-		image: social.image,
-		link: social.link,
-		target: "_blank"
-	};
-
-	socialMedia.push(entry);
-}
-
-//setup projects section
-let favProject = projects.list.find(
-	(element) => element.id == projects.favProject
-) as projectObject;
-
-let featProject = projects.list[0] as projectObject;
-onMount(() => {
-	do {
-		featProject =
-			projects.list[Math.floor(Math.random() * projects.list.length)];
-
-		if (featProject.id != projects.favProject) break;
-	} while (featProject);
-});
-
-let projectsList: contentListEntry[] = [];
-
-for (let i = 0; i < projects.list.length; i++) {
-	let entry: contentListEntry;
-
-	const project = projects.list[i];
-
-	entry = {
-		title: project.title,
-		description: project.description,
-		image: project.image,
-		link: "none",
-		target: "_blank"
-	};
-
-	projectsList.push(entry);
-}
-
-let specificViewList: specificViewEntry[] = [];
-
-for (let i = 0; i < projects.list.length; i++) {
-	let entry: specificViewEntry;
-
-	const project = projects.list[i];
-
-	entry = {
-		title: project.title,
-		description: project.description,
-		image: project.image,
-		links: true,
-		git: project.git,
-		external: project.external
-	};
-
-	specificViewList.push(entry);
-}
+const { metaTitle, metaDescription } = Astro.props;
 ---
 
-<PageLayout>
-	<Banner
-		client:load
-		title={siteInfo.title}
-		description={siteInfo.description}
-	/>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	<div id="/about">
+		<title>{metaTitle}</title>
+		<meta name="description" content={metaDescription} />
+		<meta name="keywords" content={siteInfo.keywords} />
+		<meta name="author" content={siteInfo.author} />
+
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="/favicons/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="/favicons/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="/favicons/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="/favicons/site.webmanifest" />
+		<link
+			rel="mask-icon"
+			href="/favicons/safari-pinned-tab.svg"
+			color="#606060"
+		/>
+		<link rel="shortcut icon" href="/favicons/favicon.ico" />
+		<meta name="msapplication-TileColor" content="#ffffff" />
+		<meta
+			name="msapplication-config"
+			content="/favicons/browserconfig.xml"
+		/>
+		<meta name="theme-color" content="#ffffff" />
+	</head>
+
+	<body class="font-primary bg-primary text-white h-full">
+		<div id="app">
+			<Header client:only="svelte" />
+			<slot />
+			<Footer client:only="svelte" />
+		</div>
+
 		<div
-			class="m-4 mx-auto md:grid md:auto-cols-min md:grid-cols-2 md:items-center md:gap-4"
+			id="screenSizeError"
+			class="bg-secondary m-3 p-1 text-center rounded-lg"
 		>
-			<img
-				src={aboutMe.basicInfo.image}
-				alt="Represents the content displayed in this content block."
-				class="w-72 h-72 mx-auto mb-3 bg-white md:mb-0 md:mx-0 md:ml-auto"
-			/>
-			<section class="mx-auto w-72 md:w-80 md:mx-0 md:mr-auto">
-				<h2 class="text-center text-2xl font-bold underline">
-					About Me
-				</h2>
-				<p
-					class="text-justify"
-					set:html={aboutMe.basicInfo.description}
-				/>
-			</section>
+			<h1 class="mb-1 underline text-2xl">Your Screen is too Small!</h1>
+			<p class="text-sm">
+				Your screen is too small to display this website. Please come
+				back on a device with a width of at least 320px.
+			</p>
 		</div>
+	</body>
+</html>
 
-		<hr />
+<style scoped>
+	#app {
+		display: contents;
+	}
 
-		<ContentList
-			client:visible
-			title={"Technology I use"}
-			entries={techList}
-		/>
+	#screenSizeError {
+		display: none;
+	}
 
-		<hr />
+	@media screen and (max-width: 319px) {
+		#screenSizeError {
+			display: block;
+		}
 
-		<ContentList
-			client:visible
-			title="Social Media"
-			entries={socialMedia}
-		/>
-	</div>
-
-	<div>
-		<hr id="/projects" />
-
-		<div>
-			<h2 class="text-center underline text-3xl font-bold mb-4">
-				My Favorite Project
-			</h2>
-			<ContentBlock
-				title={favProject.title}
-				description={favProject.description}
-				image={favProject.image}
-				links={true}
-				git={favProject.git}
-				external={favProject.external}
-			/>
-		</div>
-
-		<hr />
-
-		<div>
-			<h2 class="text-center underline text-3xl font-bold mb-4">
-				Random Project
-			</h2>
-			<ContentBlock
-				client:visible
-				title={featProject.title}
-				description={featProject.description}
-				image={featProject.image}
-				links={true}
-				git={featProject.git}
-				external={featProject.external}
-			/>
-		</div>
-
-		<hr />
-
-		<SpecificView
-			client:visible
-			title="Specific Project View"
-			entries={specificViewList}
-		/>
-	</div>
-
-	<hr />
-</PageLayout>
+		#app {
+			display: none;
+		}
+	}
+</style>

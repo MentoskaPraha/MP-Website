@@ -1,19 +1,12 @@
 ---
-import "../styles/global.css";
-import { siteInfo } from "../content.json";
-import BaseBody from "../components/baseBody.astro";
-import BaseHead from "../components/baseHead.astro";
-import Page from "../layouts/page.astro";
+import "$globalStyle";
+import Page from "@layouts/page.astro";
+import Banner from "@components/banners/MainBanner.svelte";
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-	<BaseHead
-		title={siteInfo.title}
-		metaDescription={siteInfo.metaDescription}
-	/>
-
-	<BaseBody>
-		<Page />
-	</BaseBody>
-</html>
+<Page
+	metaTitle="MP's Website"
+	metaDescription="This is the official website of MentoskaPraha. This website functions as a repository of his projects and information about him."
+>
+	<Banner client:only="svelte" />
+</Page>

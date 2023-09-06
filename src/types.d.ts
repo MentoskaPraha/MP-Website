@@ -1,3 +1,8 @@
+export interface quote {
+	content: string;
+	author: string;
+}
+
 export interface projectObject {
 	id: string;
 	title: string;

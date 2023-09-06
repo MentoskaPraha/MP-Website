@@ -1,13 +1,17 @@
 <script lang="ts">
 	import { onMount } from "svelte";
-	import { quotes, legal } from "../content.json";
+	import { quotes, legal } from "$config";
+	import type { quote } from "$types";
 
 	//functions to handle quotes
-	let quote = quotes[0];
-	onMount(() => (quote = quotes[Math.floor(Math.random() * quotes.length)]));
+	let quote: quote = {
+		content: "You shouldn't see this.",
+		author: "System"
+	};
+	onMount(() => quote = quotes[Math.floor(Math.random() * quotes.length)]);
 </script>
 
-<footer class="bg-black pb-4">
+<footer class="bg-quaternary text-black pb-4">
 	<ul class="p-4">
 		<li>
 			<p class="text-center text-2xl">"{quote.content}"</p>

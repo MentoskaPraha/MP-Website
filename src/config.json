@@ -1,8 +1,6 @@
 {
 	"siteInfo": {
-		"title": "MP's Official Website",
-		"description": "Welcome to my website. Here you can see all the projects I've worked on, some information about me and how to contact me. Enjoy your stay!",
-		"metaDescription": "This is MentoskaPraha's official website. Here you can view all the information about him you need, such as his social media accounts or the projects he's worked on.",
+		"baseTitle": "MP's Official Website",
 		"keywords": "programmer personal portfolio",
 		"author": "MentoskaPraha"
 	},
