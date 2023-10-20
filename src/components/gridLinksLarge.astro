@@ -1,0 +1,43 @@
+---
+import type { linkObject } from "$types";
+
+interface Props {
+	links: Array<linkObject>;
+}
+
+const { links } = Astro.props;
+const linksNum = links.length;
+---
+
+<ul class="grid grid-layout gap-4 place-items-center m-4">
+	{
+		links.map((item) => (
+			<li class="w-60">
+				<a
+					href={item.link}
+					target="_blank"
+					class="grid inner-grid-layout place-items-center border-4 border-tertiary bg-tertiary rounded-lg"
+				>
+					<img
+						width="240"
+						height="240"
+						class="w-60 h-60 bg-white rounded-full border-white border-4"
+						src={item.image}
+						draggable="false"
+						alt="Logo of the grid item."
+					/>
+					<h3 class="text-center text-xl">{item.title}</h3>
+				</a>
+			</li>
+		))
+	}
+</ul>
+
+<style define:vars={{ linksNum }} scoped>
+	.grid-layout {
+		grid-template-columns: repeat(var(--linksNum), minmax(240px, 1fr));
+	}
+	.inner-grid-layout {
+		grid-template-rows: 240px 48px;
+	}
+</style>

@@ -20,7 +20,7 @@
 	//functions for menu toggle
 	let menuState = false;
 	let windowSize: number;
-	$: document.body.style.overflowY = ((menuState) ? "hidden" : "auto");
+	$: document.body.style.overflowY = menuState ? "hidden" : "auto";
 </script>
 
 <svelte:window bind:innerWidth={windowSize} />
@@ -28,7 +28,7 @@
 <nav class="fixed top-0 z-50 w-screen">
 	<div class="flex bg-secondary relative z-50 h-17">
 		<img
-			src="/images/siteLogo.svg"
+			src="/assets/siteLogo.svg"
 			alt="Page logo."
 			width="56"
 			height="56"
@@ -53,9 +53,7 @@
 					/>
 				</label>
 			</div>
-		{/if}
-
-		{#if windowSize > 768}
+		{:else}
 			<ul class="flex place-items-center ml-auto mr-3">
 				{#each navLinks as item}
 					<li class="inline-block">
@@ -74,6 +72,7 @@
 			</ul>
 		{/if}
 	</div>
+
 	{#if menuState && windowSize < 768}
 		<div class="flex flex-wrap h-screen w-screen">
 			<button

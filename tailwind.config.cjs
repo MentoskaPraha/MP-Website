@@ -10,11 +10,22 @@ module.exports = {
 				quaternary: "#EEEEEE"
 			},
 			spacing: {
-				17: "4.25rem"
+				17: "4.25rem",
+				76: "19rem"
 			}
 		},
 		fontFamily: {
-			primary: ["Roboto Mono", "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace"]
+			primary: [
+				"Roboto Mono",
+				"ui-monospace",
+				"SFMono-Regular",
+				"Menlo",
+				"Monaco",
+				"Consolas",
+				"Liberation Mono",
+				"Courier New",
+				"monospace"
+			]
 		}
 	},
 	plugins: []

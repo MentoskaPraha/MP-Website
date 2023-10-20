@@ -53,8 +53,8 @@
 	}
 
 	//make scroll button appear/disappear
-	function updateScrollButton(){
-		if(window.scrollY > 50){
+	function updateScrollButton() {
+		if (window.scrollY > 50) {
 			showArrow = false;
 		} else {
 			showArrow = true;
@@ -67,7 +67,7 @@
 <div
 	bind:this={bannerElement}
 	class="banner mt-17 flex justify-center items-center bg-cover bg-no-repeat bg-center"
-	style="background-image: url(/images//banners/main.webp); height: 500px"
+	style="background-image: url(/assets/banners/main.webp); height: 500px"
 >
 	<h1
 		class="text-center text-4xl font-bold md:text-5xl lg:text-6xl absolute z-20"
@@ -77,11 +77,12 @@
 
 	{#if showArrow}
 		<button
-			on:click={() => window.scrollBy({
-				top: Math.floor(window.innerHeight/2) - 68,
-				left: 0,
-				behavior: "smooth",
-			})}
+			on:click={() =>
+				window.scrollBy({
+					top: Math.floor(window.innerHeight / 2) - 68,
+					left: 0,
+					behavior: "smooth"
+				})}
 			in:fly={{
 				delay: 0,
 				duration: 1000,
@@ -94,25 +95,29 @@
 				delay: 0,
 				duration: 250
 			}}
-			class="absolute bottom-8"
+			class="absolute bottom-8 h-24"
 		>
-			<img src="/images/arrow.svg" alt="Down arrow." />
+			<img
+				src="/assets/arrows/half-down.svg"
+				alt="Down arrow."
+				draggable="false"
+			/>
 		</button>
 	{/if}
 </div>
 
 <style scoped>
-button{
-	animation: bounce 2s infinite;
+	img {
+		animation: bounce 2s infinite;
+	}
 
-}
-
-@keyframes bounce {
-	0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-} 
+	@keyframes bounce {
+		0%,
+		100% {
+			transform: translateY(0);
+		}
+		50% {
+			transform: translateY(-20px);
+		}
+	}
 </style>

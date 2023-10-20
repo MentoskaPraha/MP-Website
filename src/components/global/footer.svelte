@@ -1,14 +1,8 @@
 <script lang="ts">
-	import { onMount } from "svelte";
 	import { quotes, legal } from "$config";
-	import type { quote } from "$types";
 
 	//functions to handle quotes
-	let quote: quote = {
-		content: "You shouldn't see this.",
-		author: "System"
-	};
-	onMount(() => quote = quotes[Math.floor(Math.random() * quotes.length)]);
+	let quote = quotes[Math.floor(Math.random() * quotes.length)];
 </script>
 
 <footer class="bg-quaternary text-black pb-4">

@@ -3,6 +3,11 @@ import Header from "@components/global/header.svelte";
 import Footer from "@components/global/footer.svelte";
 import { siteInfo } from "$config";
 
+interface Props {
+	metaTitle: string;
+	metaDescription: string;
+}
+
 const { metaTitle, metaDescription } = Astro.props;
 ---
 
@@ -53,7 +58,7 @@ const { metaTitle, metaDescription } = Astro.props;
 		<div id="app">
 			<Header client:only="svelte" />
 			<slot />
-			<Footer client:only="svelte" />
+			<Footer client:visible />
 		</div>
 
 		<div
