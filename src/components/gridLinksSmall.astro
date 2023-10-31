@@ -9,7 +9,7 @@ const { links } = Astro.props;
 const linksNum = links.length;
 ---
 
-<ul class="grid grid-layout gap-4 place-items-center m-4">
+<ul class="grid grid-flow-col grid-layout gap-4 place-items-center m-4">
 	{
 		links.map((item) => (
 			<li class="w-24">

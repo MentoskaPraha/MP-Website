@@ -8,12 +8,12 @@
 			name: "Home"
 		},
 		{
-			location: "/about",
-			name: "About"
-		},
-		{
 			location: "/projects",
 			name: "Projects"
+		},
+		{
+			location: "/contact",
+			name: "Contact"
 		}
 	];
 
