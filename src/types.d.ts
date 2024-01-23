@@ -1,6 +1,4 @@
-export interface linkObject {
-	title: string;
-	image: string;
-	link: string;
-	description: string;
+export interface Command {
+	command: string;
+	outputs: string[];
 }
