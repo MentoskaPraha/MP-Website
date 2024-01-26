@@ -3,7 +3,6 @@
 	import { history } from "@stores/history";
 	import theme from "$theme";
 	import { commands } from "@utils/commands";
-	import { track } from "@utils/tracking";
 
 	let command = "";
 	let historyIndex = -1;
@@ -13,7 +12,7 @@
 	onMount(() => {
 		input.focus();
 
-		if ($history.length === 0) {
+		if ($history.length == 0) {
 			const command = commands["banner"] as () => string;
 
 			if (command) {
@@ -32,19 +31,15 @@
 	});
 
 	const handleKeyDown = async (event: KeyboardEvent) => {
-		if (event.key === "Enter") {
+		if (event.key == "Enter") {
 			const [commandName, ...args] = command.split(" ");
-
-			if (import.meta.env.VITE_TRACKING_ENABLED === "true") {
-				track(commandName, ...args);
-			}
 
 			const commandFunction = commands[commandName];
 
 			if (commandFunction) {
 				const output = await commandFunction(args);
 
-				if (commandName !== "clear") {
+				if (commandName != "clear") {
 					$history = [...$history, { command, outputs: [output] }];
 				}
 			} else {
@@ -54,7 +49,7 @@
 			}
 
 			command = "";
-		} else if (event.key === "ArrowUp") {
+		} else if (event.key == "ArrowUp") {
 			if (historyIndex < $history.length - 1) {
 				historyIndex++;
 
@@ -62,7 +57,7 @@
 			}
 
 			event.preventDefault();
-		} else if (event.key === "ArrowDown") {
+		} else if (event.key == "ArrowDown") {
 			if (historyIndex > -1) {
 				historyIndex--;
 				command =
@@ -71,7 +66,7 @@
 						: "";
 			}
 			event.preventDefault();
-		} else if (event.key === "Tab") {
+		} else if (event.key == "Tab") {
 			event.preventDefault();
 
 			const autoCompleteCommand = Object.keys(commands).find((cmd) =>
@@ -81,7 +76,7 @@
 			if (autoCompleteCommand) {
 				command = autoCompleteCommand;
 			}
-		} else if (event.ctrlKey && event.key === "l") {
+		} else if (event.ctrlKey && event.key == "l") {
 			event.preventDefault();
 
 			$history = [];
