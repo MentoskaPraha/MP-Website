@@ -1,6 +1,20 @@
 {
-	"extends": "astro/tsconfigs/strict",
+	"extends": "@tsconfig/svelte/tsconfig.json",
 	"compilerOptions": {
-		"strictNullChecks": true
-	}
+		"target": "ESNext",
+		"useDefineForClassFields": true,
+		"module": "ESNext",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"baseUrl": ".",
+		"paths": {
+			"@components/*": ["src/components/*"],
+			"@stores/*": ["src/stores/*"],
+			"@utils/*": ["src/utils/*"],
+			"$types": ["src/types.d.ts"],
+			"$theme": ["src/theme.json"]
+		}
+	},
+	"include": ["src/**/*.ts", "src/**/*.svelte"],
+	"references": [{ "path": "./tsconfig.node.json" }]
 }

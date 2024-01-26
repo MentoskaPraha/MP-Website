@@ -7,7 +7,8 @@ This website is designed to be hosted on any static deployment platform.
 ## Deployment
 
 To deploy this website for yourself, simple clone the Github repository and customize the `content.json` file located in:  
-`/src/content.json`
+`/src/content.json`  
+You will also need to modify other things, such as the `index.astro`.
 
 Before deploying you will need to install the project dependancies by running the following in your terminal at the project location:
 
