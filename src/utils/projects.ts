@@ -6,7 +6,7 @@ export const projects: Record<
 > = {
 	mp_website: (args: string[]) => {
 		const info = stripIndents`
-            ░░░░░░░░░░░░░░████████████░░░░░░░░░░░░░░  MP's Website
+            		░░░░░░░░░░░░░░████████████░░░░░░░░░░░░░░  MP's Website
 			░░░░░░░░░░░███░░░░░░░░░░░░███░░░░░░░░░░░
 			░░░░░░░░░██░░░░░█░░░░░░░█░░░░██░░░░░░░░░  This is my personal website, which
 			░░░░░░░░██░░░░░░█░░░░░░░█░░░░░██░░░░░░░░  I use as a portfolio in order to
