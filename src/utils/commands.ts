@@ -67,8 +67,6 @@ export const commands: Record<
 			where '[args]' is one of the items on the list above.
 		`;
 
-		console.log(projects);
-
 		if (args.length == 0) return info;
 
 		const projectFunction = projects[args[0]];
