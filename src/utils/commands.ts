@@ -29,6 +29,11 @@ export const commands: Record<
 
 		return "Opening Github page...";
 	},
+	youtube: () => {
+		window.open("https://youtube.com/@mentoskapraha")
+
+		return "Opening Youtube channel page..."
+	},
 	about: () => stripIndents`
 		░░░░░░░░░░░░░░████████████░░░░░░░░░░░░░░  Hi!
 		░░░░░░░░░░░███░░░░░░░░░░░░███░░░░░░░░░░░
@@ -43,12 +48,12 @@ export const commands: Record<
 		░░░░░░░░██░░░██░░░░░░░░░░██░░░██░░░░░░░░  Timezone: GMT+2
 		░██████░░██░░░░█████████░░░░██░░░██████░  Relationship Status: Wouldn't you like to know!
 		█░░░░░░█░░░░████░░░░░░░░████░░░░█░░░░░░█  
-		█░░░░░░█░░░░░░░░████████░░░░░░░░█░░░░░░█
-		░██████░░░░░░░░░░░░░░░░░░░░░░░░░░██████░
-		░░░░░░░░░░░░░░░░█░░░░░░█░░░░░░░░░░░░░░░░
-		░░░░░░░░░░░░░░░░█░░░░░░█░░░░░░░░░░░░░░░░
-		░░░░░░░░░░░░░░░░█░░░░░░█░░░░░░░░░░░░░░░░
-		░░░░░░░░░░░░░░███░░░░░░███░░░░░░░░░░░░░░
+		█░░░░░░█░░░░░░░░████████░░░░░░░░█░░░░░░█  
+		░██████░░░░░░░░░░░░░░░░░░░░░░░░░░██████░  
+		░░░░░░░░░░░░░░░░█░░░░░░█░░░░░░░░░░░░░░░░  
+		░░░░░░░░░░░░░░░░█░░░░░░█░░░░░░░░░░░░░░░░  
+		░░░░░░░░░░░░░░░░█░░░░░░█░░░░░░░░░░░░░░░░  
+		░░░░░░░░░░░░░░███░░░░░░███░░░░░░░░░░░░░░  
 	`,
 	projects: async (args: string[]) => {
 		const info = stripIndents`
@@ -94,6 +99,12 @@ export const commands: Record<
 		word that corresponds to a function. You can use the 'help' 
 		command to get a list of all available commands at any time.
 		Enjoy!
+
+		A Note about Social Media:
+		All social media accounts not linked here should not be trusted 
+		as they may be imposters. Do note I also use the alias 
+		'Mentoska44' at times. As long as profile is linked here it's 
+		official, other wise: DON'T TRUST IT!
 	`,
 	legal: () => stripIndents`
 		░█░░░█▀▀░█▀▀░█▀█░█░░░░░█▀▀░▀█▀░█░█░█▀▀░█▀▀
