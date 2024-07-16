@@ -4,6 +4,10 @@ Here is the source code for my personal website. If you want to use this for you
 ## Contributions
 At the current moment only code contributions are accepted.
 
+## Branches
+- `main` - This is the source code of the currently viewable website.
+- `dev` - Changes and edits are made here before being pushed to main to be published.
+
 ## To-Do
 - [ ] Cool landing page
   - [ ] Hacker text with Vue on giant background banner
