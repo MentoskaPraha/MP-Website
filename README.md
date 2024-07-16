@@ -1,5 +1,40 @@
 # MP-Website
+Here is the source code for my personal website. If you want to use this for your own website, make sure you replace my content with yours.
 
-This is the code for the MP's Official Website, feel free to inspect it and open a pull request if you find anything wrong with the code, spelling or you know how to do something more efficiently.
+## Contributions
+At the current moment only code contributions are accepted.
 
-This website is designed to be hosted on any static deployment platform and was based on the [terminal](https://github.com/m4tt72/terminal) project by [m4tt72](https://github.com/m4tt72).
+## To-Do
+- [ ] Cool landing page
+  - [ ] Hacker text with Vue on giant background banner
+- [ ] Chose a font
+- [ ] Hamburger menu for navigation between pages
+- [ ] Navbar
+- [ ] About Page
+  - [ ] Quick summary about me (IRL name included)
+  - [ ] The technology I use organised by project
+  - [ ] The games I'd recommend
+  - [ ] Contact and social links
+- [ ] Footer
+  - [ ] Licensing stuff
+  - [ ] Privacy Policy stuff
+  - [ ] Contact
+- [ ] Project page
+  - [ ] A full view of all of my projects
+  - [ ] Details about each project
+    - title
+    - description
+    - image
+    - tech stack
+    - links to source, the project and blog (if applicable)
+- [ ] Blog Page
+  - [ ] RSS feeds, one for each type of blog post and one for everything
+  - [ ] A way to filter blog posts by type or project
+  - [ ] Each blog post is composed in Markdown
+- [ ] Anything else I forgor
+
+## Licenses
+The source code for this website is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+The content of this website is licensed under the Creative Commons Attribution-ShareAlike 4.0 International Public
+License. See the [CONTENT_LICENSE](CONTENT_LICENSE) file for details.
