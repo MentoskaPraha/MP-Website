@@ -39,6 +39,3 @@ At the current moment only code contributions are accepted.
 
 ## Licenses
 The source code for this website is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-The content of this website is licensed under the Creative Commons Attribution-ShareAlike 4.0 International Public
-License. See the [CONTENT_LICENSE](CONTENT_LICENSE) file for details.

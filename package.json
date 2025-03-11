@@ -1,5 +1,5 @@
 {
-  "name": "proper-parallax",
+  "name": "mp-website",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,17 +10,24 @@
     "format": "prettier . --write"
   },
   "dependencies": {
-    "@astrojs/check": "^0.8.1",
-    "@astrojs/sitemap": "^3.1.6",
-    "@astrojs/tailwind": "^5.1.0",
-    "@astrojs/vue": "^4.5.0",
-    "astro": "^4.11.5",
-    "tailwindcss": "^3.4.6",
-    "typescript": "^5.5.3",
-    "vue": "^3.4.31"
+    "@astrojs/check": "^0.8.3",
+    "@astrojs/sitemap": "^3.2.1",
+    "@astrojs/svelte": "^7.0.6",
+    "@astrojs/tailwind": "^5.1.5",
+    "astro": "^5.4.3",
+    "svelte": "^5.22.6",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.8.2"
   },
   "devDependencies": {
-    "prettier": "^3.3.3",
+    "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1"
+  },
+  "packageManager": "pnpm@10.6.2+sha512.47870716bea1572b53df34ad8647b42962bc790ce2bf4562ba0f643237d7302a3d6a8ecef9e4bdfc01d23af1969aa90485d4cebb0b9638fa5ef1daef656f6c1b",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ]
   }
 }
