@@ -1,14 +1,18 @@
 # MP-Website
+
 Here is the source code for my personal website. If you want to use this for your own website, make sure you replace my content with yours.
 
 ## Contributions
+
 At the current moment only code contributions are accepted.
 
 ## Branches
+
 - `main` - This is the source code of the currently viewable website.
 - `dev` - Changes and edits are made here before being pushed to main to be published.
 
 ## To-Do
+
 - [ ] Cool landing page
   - [ ] Hacker text with Vue on giant background banner
 - [ ] Chose a font
@@ -38,4 +42,5 @@ At the current moment only code contributions are accepted.
 - [ ] Anything else I forgor
 
 ## Licenses
+
 The source code for this website is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
