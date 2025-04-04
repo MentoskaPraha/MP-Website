@@ -69,7 +69,7 @@
 >
   <h1
     bind:this={titleElement}
-    class="font-mono text-center text-4xl font-bold md:text-5xl lg:text-6xl absolute z-20 p-4"
+    class="font-mono text-center text-4xl font-bold md:text-5xl lg:text-6xl absolute z-10 p-4"
     onmouseover={() => runLetterEffect()}
     onfocus={() => {}}
   >

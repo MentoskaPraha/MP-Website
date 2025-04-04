@@ -13,11 +13,11 @@ At the current moment only code contributions are accepted.
 
 ## To-Do
 
-- [ ] Cool landing page
-  - [ ] Hacker text with Vue on giant background banner
-- [ ] Chose a font
-- [ ] Hamburger menu for navigation between pages
-- [ ] Navbar
+- [x] Cool landing page
+  - [x] Hacker text with Vue on giant background banner
+- [x] Chose a font
+- [x] Hamburger menu for navigation between pages
+- [x] Navbar
 - [ ] About Page
   - [ ] Quick summary about me (IRL name included)
   - [ ] The technology I use organised by project
