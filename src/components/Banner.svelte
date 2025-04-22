@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import banner from "@images/banner.webp";
 
   //banner variables
   let { title }: { title: string } = $props();
@@ -19,7 +20,6 @@
   }
 
   //Make a cool letter effect
-
   let runningLetterEffect = false;
 
   function runLetterEffect() {
@@ -65,7 +65,8 @@
 
 <div
   bind:this={bannerElement}
-  class="banner flex justify-center items-center bg-cover bg-no-repeat bg-center bg-[url('/images/banner.webp')]"
+  class="flex justify-center items-center bg-cover bg-no-repeat bg-center"
+  style="background-image: url({banner.src});"
 >
   <h1
     bind:this={titleElement}

@@ -10,6 +10,7 @@
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],
       "@pages/*": ["src/pages/*"],
+      "@images/*": ["src/images/*"],
       "@css": ["src/styles/global.css"]
     }
   },
@@ -17,6 +18,6 @@
     "src/**/*.d.ts",
     "src/**/*.ts",
     "src/**/*.astro",
-    "src/**/*.svelte"
+    "src/**/*.svelte",
   ]
 }

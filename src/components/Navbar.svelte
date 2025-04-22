@@ -1,5 +1,6 @@
 <script lang="ts">
   import { fade } from "svelte/transition";
+  import logo from "@images/avatar.svg";
 
   let menuButton: Element;
   let menuElement: Element | undefined = $state();
@@ -77,7 +78,7 @@
 <header class="h-14 bg-blue-600 flex items-center">
   <a href="/" class="flex items-center">
     <img
-      src="/images/siteLogo.svg"
+      src={logo.src}
       alt="Site Logo"
       class="bg-white h-10 w-10 rounded-md ml-2 mr-2"
     />
