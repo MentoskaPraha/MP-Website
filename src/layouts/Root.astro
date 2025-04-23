@@ -4,19 +4,23 @@ import "@css";
 //setup props
 interface Props {
   title?: string;
+  siteTitle?: string;
   description: string;
 }
 
-const description = Astro.props.description;
+const { title, siteTitle, description } = Astro.props;
 
 //setup page title
-let title = Astro.props.title;
+let pageTitle = "MP's Website";
 
-if (title != null) {
-  title = title + " | MP's Website";
-} else {
-  title = "MP's Website";
+if (title != null && siteTitle != null) {
+  pageTitle = title + " | " + siteTitle;
+  return;
 }
+
+if (title != null) pageTitle = title + " | MP's Website";
+
+if (siteTitle != null) pageTitle = siteTitle;
 ---
 
 <!doctype html>
@@ -48,7 +52,7 @@ if (title != null) {
     <link rel="manifest" href="/favicon/site.webmanifest" />
 
     <meta name="description" content={description} />
-    <title>{title}</title>
+    <title>{pageTitle}</title>
   </head>
   <body class="bg-zinc-800 text-white font-sans select-none">
     <slot />

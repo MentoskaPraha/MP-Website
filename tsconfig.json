@@ -18,6 +18,6 @@
     "src/**/*.d.ts",
     "src/**/*.ts",
     "src/**/*.astro",
-    "src/**/*.svelte",
+    "src/**/*.svelte"
   ]
 }

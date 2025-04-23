@@ -68,12 +68,16 @@
   class="flex justify-center items-center bg-cover bg-no-repeat bg-center"
   style="background-image: url({banner.src});"
 >
+  <!-- svelte-ignore a11y_hidden -->
   <h1
     bind:this={titleElement}
     class="font-mono text-center text-4xl font-bold md:text-5xl lg:text-6xl absolute z-10 p-4"
-    onmouseover={() => runLetterEffect()}
-    onfocus={() => {}}
+    onmouseenter={() => runLetterEffect()}
+    aria-hidden="true"
   >
     {displayedTitle}
+  </h1>
+  <h1 class="sr-only">
+    {title}
   </h1>
 </div>

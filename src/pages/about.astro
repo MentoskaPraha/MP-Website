@@ -1,6 +1,7 @@
 ---
 import Root from "@layouts/Root.astro";
 import Navbar from "@components/Navbar.svelte";
+import AboutBox from "@components/AboutBox.svelte";
 ---
 
 <Root
@@ -8,12 +9,10 @@ import Navbar from "@components/Navbar.svelte";
   description="This page is all about me! That sound egomaniacal. It's not supposed to, this is just a convenient way for you to get to know me."
 >
   <Navbar client:load />
-  <div>
-    <h2>About Me</h2>
-  </div>
+  <AboutBox client:visible />
 
-  <div>
-    <h2>Technology I Use</h2>
+  <div class="mt-8">
+    <h2 class="text-center text-3xl font-bold underline">Technology I Use</h2>
   </div>
 
   <div>
