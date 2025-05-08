@@ -2,6 +2,29 @@
 import Root from "@layouts/Root.astro";
 import Navbar from "@components/Navbar.svelte";
 import AboutBox from "@components/AboutBox.svelte";
+import ItemDisplay from "@components/ItemDisplay.svelte";
+import { getCollection } from "astro:content";
+import type { ItemDisplayItem } from "@types";
+
+const technology = (await getCollection("technology")).map((entry) => {
+  return {
+    id: entry.id,
+    title: entry.data.title,
+    description: entry.data.description,
+    image: `/src/assets/technology/${entry.id}.svg`,
+    link: entry.data.link
+  } as ItemDisplayItem;
+});
+
+const games = (await getCollection("games")).map((entry) => {
+  return {
+    id: entry.id,
+    title: entry.data.title,
+    description: entry.data.description,
+    image: `/src/assets/games/${entry.id}.webp`,
+    link: entry.data.link
+  } as ItemDisplayItem;
+});
 ---
 
 <Root
@@ -13,10 +36,12 @@ import AboutBox from "@components/AboutBox.svelte";
 
   <div class="mt-8">
     <h2 class="text-center text-3xl font-bold underline">Technology I Use</h2>
+    <ItemDisplay items={technology} client:visible />
   </div>
 
-  <div>
-    <h2>Games I Enjoy</h2>
-    Might be useful to grab this from Steam?
+  <div class="mt-8">
+    <h2 class="text-center text-3xl font-bold underline">Technology I Use</h2>
+    <ItemDisplay items={games} client:visible />
+    Might be useful to grab playtime from Steam?
   </div>
 </Root>

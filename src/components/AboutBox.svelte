@@ -1,5 +1,6 @@
 <script lang="ts">
-  import Avatar from "@images/avatar.svg";
+  import Avatar from "@assets/avatar.svg";
+  import Placeholder from "@assets/placeholder.svg";
   import { crossfade } from "svelte/transition";
   import { quintOut } from "svelte/easing";
 
@@ -70,7 +71,7 @@
   >
     {#if imageHovered}
       <img
-        src="/unused-assets/comingSoonLogo.svg"
+        src={Placeholder.src}
         alt="Me (Filip J. Stary)"
         width="300"
         height="300"

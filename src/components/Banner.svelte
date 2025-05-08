@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import banner from "@images/banner.webp";
+  import banner from "@assets/banner.webp";
 
   //banner variables
   let { title }: { title: string } = $props();

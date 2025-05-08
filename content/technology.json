@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "id": "astro",
+    "title": "Astro",
+    "description": "",
+    "link": ""
+  },
+  {
+    "id": "tailwind",
+    "title": "Tailwind",
+    "description": "",
+    "link": ""
+  },
+  {
+    "id": "svelte",
+    "title": "Svelte",
+    "description": "",
+    "link": ""
+  },
+  {
+    "id": "typescript",
+    "title": "Typescript",
+    "description": "",
+    "link": ""
+  },
+  {
+    "id": "git",
+    "title": "Git",
+    "description": "",
+    "link": ""
+  },
+  {
+    "id": "vscodium",
+    "title": "VSCodium",
+    "description": "",
+    "link": ""
+  },
+  {
+    "id": "flutter",
+    "title": "Flutter",
+    "description": "",
+    "link": ""
+  }
+]

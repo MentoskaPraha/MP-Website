@@ -1,6 +1,6 @@
 <script lang="ts">
   import { fade } from "svelte/transition";
-  import logo from "@images/avatar.svg";
+  import logo from "@assets/avatar.svg";
 
   let menuButton: Element;
   let menuElement: Element | undefined = $state();

@@ -1,1 +1,62 @@
-[]
+[
+  {
+    "id": "sot",
+    "title": "Sea of Thieves",
+    "description": "",
+    "link": ""
+  },
+  {
+    "id": "satisfactory",
+    "title": "Satisfactory",
+    "description": "",
+    "link": ""
+  },
+  {
+    "id": "btd6",
+    "title": "Bloons Tower Defense 6",
+    "description": "",
+    "link": ""
+  },
+  {
+    "id": "minecraft",
+    "title": "Minecraft",
+    "description": "",
+    "link": ""
+  },
+  {
+    "id": "dicey-dungeons",
+    "title": "Dicey Dungeons",
+    "description": "",
+    "link": ""
+  },
+  {
+    "id": "drg",
+    "title": "Deep Rock Galactic",
+    "description": "",
+    "link": ""
+  },
+  {
+    "id": "rot",
+    "title": "Ready or Not",
+    "description": "",
+    "link": ""
+  },
+  {
+    "id": "ep",
+    "title": "Entry Point",
+    "description": "",
+    "link": ""
+  },
+  {
+    "id": "epfc",
+    "title": "Entry Point: Freelancer's Cut",
+    "description": "",
+    "link": ""
+  },
+  {
+    "id": "operators",
+    "title": "Operators",
+    "description": "",
+    "link": ""
+  }
+]
