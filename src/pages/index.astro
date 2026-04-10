@@ -1,13 +1,13 @@
 ---
-import Root from "@layouts/Root.astro";
+import Layout from "@layouts/Root.astro";
 import Banner from "@components/Banner.svelte";
 import Navbar from "@components/Navbar.svelte";
 ---
 
-<Root description="The official website of MentoskaPraha. Enjoy!">
+<Layout description="The official website of MentoskaPraha. Enjoy!">
   <Banner title="MP's Website" client:load />
   <Navbar client:load />
   <div class="h-96">
     <p class="select-text">Lorem Ipsum</p>
   </div>
-</Root>
+</Layout>

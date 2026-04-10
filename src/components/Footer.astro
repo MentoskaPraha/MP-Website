@@ -1,0 +1,49 @@
+---
+import type { Quote } from "@types";
+import { getCollection } from "astro:content";
+
+const quotes = (await getCollection("quotes")).map((entry) => {
+  return {
+    quote: entry.data.quote,
+    author: entry.data.author
+  } as Quote;
+});
+
+const quote = quotes[Math.floor(Math.random() * quotes.length)];
+---
+
+<footer class="mt-8 p-4 bg-black">
+  <div>
+    <p class="text-2xl font-bold text-center">
+      {quote.quote}
+    </p>
+    <p class="text-xl text-center">
+      - {quote.author}
+    </p>
+  </div>
+
+  <div>
+    <h2>Copyright</h2>
+    <p>
+      All images and content made by me is licensed under <a
+        href="https://creativecommons.org/licenses/by-sa/4.0/"
+        target="_blank"
+        rel="noopener noreferrer">CC BY-SA 4.0</a
+      >, while logos are the property of the company/organisation/product they
+      represent.
+    </p>
+    <h2>Privacy Policy</h2>
+    <p>
+      This website does not collect any data from the user nor does it store any
+      cookie or data on the user's browser.
+    </p>
+  </div>
+  <div>
+    <a
+      href="https://github.com/MentoskaPraha/MP-Website"
+      target="_blank"
+      rel="noopener noreferrer">Source Code</a
+    >
+    <a href="mailto:contact+website@mentoskapraha.com">Email</a>
+  </div>
+</footer>

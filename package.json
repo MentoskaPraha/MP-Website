@@ -10,21 +10,21 @@
     "format": "prettier . --write"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/sitemap": "^3.3.1",
-    "@astrojs/svelte": "^7.0.13",
-    "@tailwindcss/vite": "^4.1.5",
-    "astro": "^5.7.10",
-    "svelte": "^5.28.2",
-    "tailwindcss": "^4.1.5",
-    "typescript": "^5.8.3"
+    "@astrojs/check": "^0.9.5",
+    "@astrojs/sitemap": "^3.6.0",
+    "@astrojs/svelte": "^7.2.2",
+    "@tailwindcss/vite": "^4.1.17",
+    "astro": "^5.15.7",
+    "svelte": "^5.43.6",
+    "tailwindcss": "^4.1.17",
+    "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "prettier": "^3.5.3",
+    "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-svelte": "^3.3.3"
+    "prettier-plugin-svelte": "^3.4.0"
   },
-  "packageManager": "pnpm@10.6.2+sha512.47870716bea1572b53df34ad8647b42962bc790ce2bf4562ba0f643237d7302a3d6a8ecef9e4bdfc01d23af1969aa90485d4cebb0b9638fa5ef1daef656f6c1b",
+  "packageManager": "pnpm@10.22.0+sha512.bf049efe995b28f527fd2b41ae0474ce29186f7edcb3bf545087bd61fbbebb2bf75362d1307fda09c2d288e1e499787ac12d4fcb617a974718a6051f2eee741c",
   "pnpm": {
     "onlyBuiltDependencies": [
       "esbuild",

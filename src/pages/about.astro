@@ -1,17 +1,15 @@
 ---
-import Root from "@layouts/Root.astro";
-import Navbar from "@components/Navbar.svelte";
 import AboutBox from "@components/AboutBox.svelte";
 import ItemDisplay from "@components/ItemDisplay.svelte";
 import { getCollection } from "astro:content";
 import type { ItemDisplayItem } from "@types";
+import Layout from "@layouts/Global.astro";
 
 const technology = (await getCollection("technology")).map((entry) => {
   return {
     id: entry.id,
     title: entry.data.title,
     description: entry.data.description,
-    image: `/src/assets/technology/${entry.id}.svg`,
     link: entry.data.link
   } as ItemDisplayItem;
 });
@@ -21,27 +19,46 @@ const games = (await getCollection("games")).map((entry) => {
     id: entry.id,
     title: entry.data.title,
     description: entry.data.description,
-    image: `/src/assets/games/${entry.id}.webp`,
     link: entry.data.link
   } as ItemDisplayItem;
 });
 ---
 
-<Root
+<Layout
   title="About"
   description="This page is all about me! That sound egomaniacal. It's not supposed to, this is just a convenient way for you to get to know me."
 >
-  <Navbar client:load />
   <AboutBox client:visible />
 
   <div class="mt-8">
-    <h2 class="text-center text-3xl font-bold underline">Technology I Use</h2>
-    <ItemDisplay items={technology} client:visible />
+    <h2 class="text-center text-3xl font-bold underline mb-3">
+      Technology I Use for Development
+    </h2>
+    <ItemDisplay
+      images={import.meta.glob<{ default: ImageMetadata }>(
+        "/src/assets/technology/*.{webp,svg}",
+        {
+          eager: true
+        }
+      )}
+      items={technology}
+      client:visible
+    />
   </div>
 
   <div class="mt-8">
-    <h2 class="text-center text-3xl font-bold underline">Technology I Use</h2>
-    <ItemDisplay items={games} client:visible />
-    Might be useful to grab playtime from Steam?
+    <h2 class="text-center text-3xl font-bold underline mb-3">
+      Games I Play and Enjoy
+    </h2>
+    <ItemDisplay
+      images={import.meta.glob<{ default: ImageMetadata }>(
+        "/src/assets/games/*.{webp,svg}",
+        {
+          eager: true
+        }
+      )}
+      items={games}
+      client:visible
+    />
   </div>
-</Root>
+</Layout>

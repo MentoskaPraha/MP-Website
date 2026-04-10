@@ -4,6 +4,7 @@
 
   let menuButton: Element;
   let menuElement: Element | undefined = $state();
+  let menuButtonZooming = $state(false);
   let menuButtonZoomed = $state(false);
   let menuButtonStyle = $state("");
   let menuButtonStartRect: DOMRect;
@@ -11,6 +12,8 @@
   let navbarMenuStyle = $state("");
 
   function zoomInContactButton() {
+    if (menuButtonZooming) return;
+    menuButtonZooming = true;
     menuButtonZoomed = true;
     document.body.style = "overflow: hidden";
     updateContactButtonZoom();
@@ -18,14 +21,21 @@
       showNavbarMenu = true;
       navbarMenuStyle = `top: ${window.scrollY}px`;
       document.addEventListener("click", handleClickOutsideEvent, true);
+      menuButtonZooming = false;
     }, 1000);
   }
 
   function zoomOutContactButton() {
-    menuButtonStyle = "";
-    menuButtonZoomed = false;
+    if (menuButtonZooming) return;
+    menuButtonZooming = true;
     showNavbarMenu = false;
     document.body.style = "";
+    document.removeEventListener("click", handleClickOutsideEvent, true);
+    menuButtonStyle = "";
+    setTimeout(() => {
+      menuButtonZoomed = false;
+      menuButtonZooming = false;
+    }, 1000);
   }
 
   function updateContactButtonZoom() {
@@ -65,6 +75,15 @@
       ) {
         zoomOutContactButton();
       }
+    }
+  }
+
+  function handleMenuButtonClick() {
+    if (menuButtonZooming) return;
+    if (menuButtonZoomed) {
+      zoomOutContactButton();
+    } else {
+      zoomInContactButton();
     }
   }
 </script>
@@ -131,9 +150,7 @@
               ? 'transition-none duration-0'
               : ''} transition-transform duration-1000"
             style={menuButtonStyle}
-            onclick={menuButtonZoomed
-              ? zoomOutContactButton
-              : zoomInContactButton}
+            onclick={handleMenuButtonClick}
           >
             Menu
             <span

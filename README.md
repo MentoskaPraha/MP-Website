@@ -4,7 +4,7 @@ Here is the source code for my personal website. If you want to use this for you
 
 ## Contributions
 
-At the current moment only code contributions are accepted.
+No contributions are accepted at this time. If you find an issue, feel free to report it.
 
 ## Branches
 
@@ -43,4 +43,4 @@ At the current moment only code contributions are accepted.
 
 ## Licenses
 
-The source code for this website is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+The source code for this website is licensed under the MIT License. See the [LICENSE](LICENSE) file for details. All images and content made by me is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), while logos are the property of the company/organisation/product they represent.

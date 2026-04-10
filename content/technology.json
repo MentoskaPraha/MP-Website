@@ -2,43 +2,55 @@
   {
     "id": "astro",
     "title": "Astro",
-    "description": "",
-    "link": ""
+    "description": "Used to build this website. I don't really use it for anything else.",
+    "link": "https://astro.build/"
   },
   {
     "id": "tailwind",
     "title": "Tailwind",
-    "description": "",
-    "link": ""
+    "description": "Used to style this website and make it look beautiful.",
+    "link": "https://tailwindcss.com/"
   },
   {
     "id": "svelte",
     "title": "Svelte",
-    "description": "",
-    "link": ""
+    "description": "This is used for functional or interactive components of this website.",
+    "link": "https://svelte.dev/"
   },
   {
     "id": "typescript",
     "title": "Typescript",
-    "description": "",
-    "link": ""
-  },
-  {
-    "id": "git",
-    "title": "Git",
-    "description": "",
-    "link": ""
-  },
-  {
-    "id": "vscodium",
-    "title": "VSCodium",
-    "description": "",
-    "link": ""
+    "description": "This is a programing language used by Svelte and which I use.",
+    "link": "https://www.typescriptlang.org/"
   },
   {
     "id": "flutter",
     "title": "Flutter",
-    "description": "",
-    "link": ""
+    "description": "A tool for making apps on any platform.",
+    "link": "https://flutter.dev/"
+  },
+  {
+    "id": "dart",
+    "title": "Dart",
+    "description": "The programming language used by Flutter.",
+    "link": "https://dart.dev/"
+  },
+  {
+    "id": "git",
+    "title": "Git",
+    "description": "The industry standard source control tool.",
+    "link": "https://git-scm.com/"
+  },
+  {
+    "id": "vscodium",
+    "title": "VSCodium",
+    "description": "The code editor I use.",
+    "link": "https://vscodium.com/"
+  },
+  {
+    "id": "godot",
+    "title": "Godot",
+    "description": "This is the game engine I use when creating games.",
+    "link": "https://godotengine.org/"
   }
 ]

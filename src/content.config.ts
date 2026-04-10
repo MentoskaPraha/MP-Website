@@ -19,4 +19,12 @@ const technology = defineCollection({
   })
 });
 
-export const collections = { games, technology };
+const quotes = defineCollection({
+  loader: file("content/quotes.json"),
+  schema: z.object({
+    quote: z.string(),
+    author: z.string()
+  })
+});
+
+export const collections = { games, technology, quotes };

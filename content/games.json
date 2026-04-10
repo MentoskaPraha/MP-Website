@@ -2,61 +2,67 @@
   {
     "id": "sot",
     "title": "Sea of Thieves",
-    "description": "",
-    "link": ""
+    "description": "Pirate game. Lot's of fun with friends.",
+    "link": "https://store.steampowered.com/app/1172620"
   },
   {
     "id": "satisfactory",
     "title": "Satisfactory",
-    "description": "",
-    "link": ""
+    "description": "The factory must grow. I may have an addiction to this game.",
+    "link": "https://store.steampowered.com/app/526870"
   },
   {
     "id": "btd6",
-    "title": "Bloons Tower Defense 6",
-    "description": "",
-    "link": ""
+    "title": "Bloons TD 6",
+    "description": "Nice thing to have in the background while doing other stuff.",
+    "link": "https://store.steampowered.com/app/960090"
   },
   {
     "id": "minecraft",
     "title": "Minecraft",
-    "description": "",
-    "link": ""
+    "description": "A timeless classic. It will never not be fun, especially thanks to mods.",
+    "link": "https://www.minecraft.net/"
   },
   {
     "id": "dicey-dungeons",
     "title": "Dicey Dungeons",
-    "description": "",
-    "link": ""
+    "description": "Gambling Strategy Game. Need I say more?",
+    "link": "https://www.gog.com/en/game/dicey_dungeons"
   },
   {
     "id": "drg",
     "title": "Deep Rock Galactic",
-    "description": "",
-    "link": ""
+    "description": "A great CO-OP shooter/drinking simulator.",
+    "link": "https://store.steampowered.com/app/548430"
+  },
+  {
+    "id": "tf2",
+    "title": "Transport Fever 2",
+    "description": "Create a transport company and move things.",
+    "link": "https://www.gog.com/en/game/transport_fever_2"
   },
   {
     "id": "rot",
     "title": "Ready or Not",
-    "description": "",
-    "link": ""
+    "description": "S.W.A.T. simulator. It is realistic and you will get PTSD.",
+    "link": "https://store.steampowered.com/app/1144200"
   },
   {
     "id": "ep",
     "title": "Entry Point",
-    "description": "",
-    "link": ""
-  },
-  {
-    "id": "epfc",
-    "title": "Entry Point: Freelancer's Cut",
-    "description": "",
-    "link": ""
+    "description": "Fantastic 4-player CO-OP stealth shooter and on Roblox as well. Suprising.",
+    "link": "https://www.roblox.com/games/740581508"
   },
   {
     "id": "operators",
     "title": "Operators",
-    "description": "",
-    "link": ""
+    "description": "Made by the same guy as Entry Point, now with an upgraded engine and even more mechanics.",
+    "link": "https://www.roblox.com/games/740581795"
+  },
+  {
+    "id": "epfc",
+    "title": "Entry Point: Freelancer's Cut",
+    "description": "Remake of Entry Point with Operators engine.",
+    "link": "https://www.roblox.com/games/740581899"
   }
 ]

@@ -2,6 +2,10 @@ export interface ItemDisplayItem {
   id: string;
   title: string;
   description: string;
-  image: string;
   link: string?;
+}
+
+export interface Quote {
+  quote: string;
+  author: string;
 }

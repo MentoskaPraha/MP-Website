@@ -13,7 +13,7 @@
   let accessibilityName = $state("MentoskaPraha");
   let imageHovered = $state(false);
   const age = Math.abs(
-    new Date(Date.now() - Date.parse("04/04/2007")).getUTCFullYear() - 1970
+    new Date(Date.now() - Date.parse("2007")).getUTCFullYear() - 1970
   );
 
   function onMouseEnter() {
@@ -82,7 +82,7 @@
     {:else}
       <img
         src={Avatar.src}
-        alt="Me (MentoskaPraha)"
+        alt="My Avatar (MentoskaPraha)"
         width="300"
         height="300"
         class="absolute inset-0 w-full h-full object-cover"
@@ -92,23 +92,23 @@
     {/if}
   </div>
 
-  <div class="select-text w-[372px] ml-4">
+  <div class="w-[372px] ml-4">
     <h2 class="text-3xl font-bold underline">About Me</h2>
     <div class="flex">
       <h3>Name:</h3>
-      <p class="ml-1" aria-hidden="true">{name}</p>
+      <p class="ml-1 select-text" aria-hidden="true">{name}</p>
       <p class="sr-only">{accessibilityName}</p>
     </div>
     <div class="flex">
       <h3>Age:</h3>
-      <p class="ml-1">{age}</p>
+      <p class="ml-1 select-text">{age}</p>
     </div>
     <div class="flex">
       <h3>Pronouns:</h3>
-      <p class="ml-1">He/Him</p>
+      <p class="ml-1 select-text">He/Him</p>
     </div>
     <br />
-    <p class="text-justify">
+    <p class="text-justify select-text">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut modi
       voluptatum commodi obcaecati fugit, mollitia aspernatur distinctio fugiat?
       Quasi animi sed molestiae. Quos nulla consectetur pariatur facilis ipsa
