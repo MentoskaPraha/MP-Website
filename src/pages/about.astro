@@ -1,17 +1,17 @@
 ---
 import AboutBox from "@components/AboutBox.svelte";
-import ItemDisplay from "@components/ItemDisplay.svelte";
 import { getCollection } from "astro:content";
-import type { ItemDisplayItem } from "@types";
+import type { ItemDisplayItem, ItemStackGroup } from "@types";
 import Layout from "@layouts/Global.astro";
+import ItemStack from "@components/items/ItemStack.svelte";
+import ItemGrid from "@components/items/ItemGrid.svelte";
 
 const technology = (await getCollection("technology")).map((entry) => {
   return {
-    id: entry.id,
+    id: entry.data.id,
     title: entry.data.title,
-    description: entry.data.description,
-    link: entry.data.link
-  } as ItemDisplayItem;
+    items: entry.data.tech as ItemDisplayItem[]
+  } as ItemStackGroup;
 });
 
 const games = (await getCollection("games")).map((entry) => {
@@ -32,25 +32,29 @@ const games = (await getCollection("games")).map((entry) => {
 
   <div class="mt-8">
     <h2 class="text-center text-3xl font-bold underline mb-3">
-      Technology I Use for Development
+      Technology Stacks
     </h2>
-    <ItemDisplay
-      images={import.meta.glob<{ default: ImageMetadata }>(
-        "/src/assets/technology/*.{webp,svg}",
-        {
-          eager: true
-        }
-      )}
-      items={technology}
-      client:visible
-    />
+    <div class="md:flex justify-center">
+      {
+        technology.map((stack) => (
+          <ItemStack
+            title={stack.title}
+            items={stack.items}
+            images={import.meta.glob<{ default: ImageMetadata }>(
+              "/src/assets/tech/*.{webp,svg}",
+              {
+                eager: true
+              }
+            )}
+          />
+        ))
+      }
+    </div>
   </div>
 
   <div class="mt-8">
-    <h2 class="text-center text-3xl font-bold underline mb-3">
-      Games I Play and Enjoy
-    </h2>
-    <ItemDisplay
+    <h2 class="text-center text-3xl font-bold underline mb-3">Video Games</h2>
+    <ItemGrid
       images={import.meta.glob<{ default: ImageMetadata }>(
         "/src/assets/games/*.{webp,svg}",
         {

@@ -1,4 +1,5 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from "astro:content";
+import { z } from "astro/zod";
 import { file } from "astro/loaders";
 
 const games = defineCollection({
@@ -13,9 +14,15 @@ const games = defineCollection({
 const technology = defineCollection({
   loader: file("content/technology.json"),
   schema: z.object({
+    id: z.string(),
     title: z.string(),
-    description: z.string(),
-    link: z.string().nullable()
+    tech: z.array(
+      z.object({
+        title: z.string(),
+        description: z.string(),
+        link: z.string().nullable()
+      })
+    )
   })
 });
 

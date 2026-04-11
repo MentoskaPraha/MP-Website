@@ -2,6 +2,7 @@
   import { fade } from "svelte/transition";
   import logo from "@assets/avatar.svg";
 
+  //TODO Fix menu buttom not displaying properly
   let menuButton: Element;
   let menuElement: Element | undefined = $state();
   let menuButtonZooming = $state(false);
@@ -51,7 +52,7 @@
       menuButtonStartRect = rect;
 
       menuButtonStyle = `
-          transform: translate(${centerX - rect.left}px, ${centerY - rect.top}px) scale(2);
+          transform: translate(${centerX - rect.right}px, ${centerY - rect.bottom}px) scale(2);
         `;
     }
   }
@@ -101,7 +102,7 @@
       alt="Site Logo"
       class="bg-white h-10 w-10 rounded-md ml-2 mr-2"
     />
-    <h1 class="text-3xl font-bold hidden xs:flex">MP's Website</h1>
+    <h1 class="text-3xl font-bold hidden sm:flex">MP's Website</h1>
   </a>
   <nav class="ml-auto">
     <ul class="flex mr-2">

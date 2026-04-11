@@ -2,8 +2,7 @@
   import { onMount } from "svelte";
   import banner from "@assets/banner.webp";
 
-  //banner variables
-  let { title }: { title: string } = $props();
+  const title = "MP's Website";
   let displayedTitle = $state(title);
 
   //set banner height
