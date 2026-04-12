@@ -1,233 +1,172 @@
 <script lang="ts">
-  import { fade } from "svelte/transition";
+  import { fly, fade } from "svelte/transition";
+  import { quintOut } from "svelte/easing";
   import logo from "@assets/avatar.svg";
 
-  //TODO Fix menu buttom not displaying properly
-  let menuButton: Element;
-  let menuElement: Element | undefined = $state();
-  let menuButtonZooming = $state(false);
-  let menuButtonZoomed = $state(false);
-  let menuButtonStyle = $state("");
-  let menuButtonStartRect: DOMRect;
-  let showNavbarMenu = $state(false);
-  let navbarMenuStyle = $state("");
-
-  function zoomInContactButton() {
-    if (menuButtonZooming) return;
-    menuButtonZooming = true;
-    menuButtonZoomed = true;
-    document.body.style = "overflow: hidden";
-    updateContactButtonZoom();
-    setTimeout(() => {
-      showNavbarMenu = true;
-      navbarMenuStyle = `top: ${window.scrollY}px`;
-      document.addEventListener("click", handleClickOutsideEvent, true);
-      menuButtonZooming = false;
-    }, 1000);
-  }
-
-  function zoomOutContactButton() {
-    if (menuButtonZooming) return;
-    menuButtonZooming = true;
-    showNavbarMenu = false;
-    document.body.style = "";
-    document.removeEventListener("click", handleClickOutsideEvent, true);
-    menuButtonStyle = "";
-    setTimeout(() => {
-      menuButtonZoomed = false;
-      menuButtonZooming = false;
-    }, 1000);
-  }
-
-  function updateContactButtonZoom() {
-    if (window.innerWidth >= 640 && showNavbarMenu) {
-      zoomOutContactButton();
-      return;
+  const navLinks = [
+    {
+      location: "/about",
+      name: "About"
+    },
+    {
+      location: "/projects",
+      name: "Projects"
+    },
+    {
+      location: "/blog",
+      name: "Blog"
+    },
+    {
+      location: "mailto:contact+website@mentoskapraha.com",
+      name: "Contact"
     }
+  ];
 
-    if (menuButton && menuButtonZoomed) {
-      const rect = menuButton.getBoundingClientRect();
-      const centerX = window.innerWidth / 2 - rect.width / 2;
-      const centerY = window.innerHeight / 2 - rect.height / 2;
-      menuButtonStartRect = rect;
-
-      menuButtonStyle = `
-          transform: translate(${centerX - rect.right}px, ${centerY - rect.bottom}px) scale(2);
-        `;
-    }
-  }
-
-  function handleKeypress(event: KeyboardEvent) {
-    if (event.key == "Escape" && showNavbarMenu) {
-      if (document.activeElement instanceof HTMLButtonElement)
-        document.activeElement.blur();
-      zoomOutContactButton();
-    }
-  }
-
-  function handleClickOutsideEvent(event: MouseEvent) {
-    if (!showNavbarMenu) return;
-
-    if (event.target instanceof Element) {
-      if (
-        menuElement != undefined &&
-        !menuElement.contains(event.target) &&
-        !event.defaultPrevented
-      ) {
-        zoomOutContactButton();
-      }
-    }
-  }
-
-  function handleMenuButtonClick() {
-    if (menuButtonZooming) return;
-    if (menuButtonZoomed) {
-      zoomOutContactButton();
-    } else {
-      zoomInContactButton();
-    }
-  }
+  //functions for menu toggle
+  let menuState = $state(false);
+  let windowSize = $state(0);
+  $effect(() => {
+    document.body.style.overflowY = menuState ? "hidden" : "auto";
+  });
 </script>
 
-<svelte:window
-  onresize={updateContactButtonZoom}
-  onkeydown={handleKeypress}
-  onclick={handleClickOutsideEvent}
-/>
+<svelte:window bind:innerWidth={windowSize} />
 
-<header class="h-14 bg-blue-600 flex items-center">
+<header class="sticky top-0 h-14 z-40 bg-blue-600 flex items-center">
   <a href="/" class="flex items-center">
     <img
       src={logo.src}
       alt="Site Logo"
       class="bg-white h-10 w-10 rounded-md ml-2 mr-2"
     />
-    <h1 class="text-3xl font-bold hidden sm:flex">MP's Website</h1>
+    <h1 class="text-3xl font-bold flex">MP's Website</h1>
   </a>
   <nav class="ml-auto">
     <ul class="flex mr-2">
-      <li class="ml-2 mr-2 text-xl hidden sm:flex">
-        <a
-          href="/about"
-          data-astro-prefetch
-          class="relative inline-block group"
-        >
-          About
-          <span
-            class="absolute left-0 -bottom-0.5 h-0.5 rounded-full w-full bg-current origin-right scale-x-0 transition-transform duration-150 ease-in-out group-hover:origin-left group-hover:scale-x-100"
-          ></span>
-        </a>
-      </li>
-
-      <li class="ml-2 mr-2 text-xl hidden sm:flex">
-        <a
-          href="/projects"
-          data-astro-prefetch
-          class="relative inline-block group"
-        >
-          Projects
-          <span
-            class="absolute left-0 -bottom-0.5 h-0.5 rounded-full w-full bg-current origin-right scale-x-0 transition-transform duration-150 ease-in-out group-hover:origin-left group-hover:scale-x-100"
-          ></span>
-        </a>
-      </li>
-
-      <li class="ml-2 mr-2 text-xl hidden sm:flex">
-        <a href="/blog" data-astro-prefetch class="relative inline-block group">
-          Blog
-          <span
-            class="absolute left-0 -bottom-0.5 h-0.5 rounded-full w-full bg-current origin-right scale-x-0 transition-transform duration-150 ease-in-out group-hover:origin-left group-hover:scale-x-100"
-          ></span>
-        </a>
-      </li>
-
-      <li class="ml-2 mr-2 text-xl sm:hidden">
-        <div
-          class={menuButtonZoomed ? "cursor-default" : ""}
-          bind:this={menuButton}
-        >
-          <button
-            class="cursor-pointer relative inline-block group z-50 {showNavbarMenu
-              ? 'transition-none duration-0'
-              : ''} transition-transform duration-1000"
-            style={menuButtonStyle}
-            onclick={handleMenuButtonClick}
+      {#if windowSize > 640}
+        {#each navLinks as item}
+          <li class="ml-2 mr-2 text-xl flex">
+            <a
+              href={item.location}
+              data-astro-prefetch
+              class="relative inline-block group"
+            >
+              {item.name}
+              <span
+                class="absolute left-0 -bottom-0.5 h-0.5 rounded-full w-full bg-current origin-right scale-x-0 transition-transform duration-150 ease-in-out group-hover:origin-left group-hover:scale-x-100"
+              ></span>
+            </a>
+          </li>
+        {/each}
+      {:else}
+        <li class="flex place-items-center ml-auto">
+          <input
+            id="nav-toggle"
+            class="hidden"
+            type="checkbox"
+            bind:checked={menuState}
+          />
+          <label
+            class="nav-button-container w-8 h-5 inline-block cursor-pointer"
+            for="nav-toggle"
           >
-            Menu
-            <span
-              class="absolute left-0 -bottom-0.5 h-0.5 rounded-full w-full bg-current origin-right scale-x-0 transition-transform duration-150 ease-in-out group-hover:origin-left group-hover:scale-x-100 {menuButtonZoomed
-                ? 'origin-left scale-x-100'
-                : ''}"
-            ></span>
-          </button>
-        </div>
-      </li>
-
-      <li class="ml-2 mr-2 text-xl">
-        <a
-          href="mailto:contact+website@mentoskapraha.com"
-          class="relative inline-block group"
-        >
-          Contact
-          <span
-            class="absolute left-0 -bottom-0.5 h-0.5 rounded-full w-full bg-current origin-right scale-x-0 transition-transform duration-150 ease-in-out group-hover:origin-left group-hover:scale-x-100"
-          ></span>
-        </a>
-      </li>
+            <div
+              id="nav-button"
+              class="nav-button block bg-gray-100 absolute h-1 w-8 rounded-sm before:block before:bg-gray-100 before:absolute before:h-1 before:w-8 before:rounded-sm after:block after:bg-gray-100 after:absolute after:h-1 after:w-8 after:rounded-sm"
+            ></div>
+          </label>
+        </li>
+      {/if}
     </ul>
   </nav>
 
-  {#if showNavbarMenu}
-    <menu
-      class="absolute w-full h-full bg-gray-200/50 flex justify-center z-40"
-      style={navbarMenuStyle}
-      transition:fade
-    >
-      <div
-        bind:this={menuElement}
-        class="relative top-1/2 -translate-y-1/4 w-full h-30 bg-blue-600 flex flex-col items-center justify-between"
+  {#if menuState && windowSize < 640}
+    <menu class="fixed top-0 h-screen w-screen z-50">
+      <button
+        transition:fade={{ delay: 0, duration: 500, easing: quintOut }}
+        onclick={() => (menuState = false)}
+        class="pt-28 bg-white text-gray-50 opacity-60 z-50 fixed w-full h-full hover:cursor-default transition-opacity"
+        aria-hidden="true"
       >
-        <ul class="flex mt-auto mb-3.5">
-          <li class="ml-auto mr-2 text-2xl" in:fade={{ delay: 600 }}>
-            <a
-              href="/about"
+        This is a hidden message. Pretty cool right?
+      </button>
+      <nav
+        transition:fly={{
+          delay: 0,
+          duration: 1000,
+          x: 224,
+          y: 0,
+          opacity: 0,
+          easing: quintOut
+        }}
+        class="bg-blue-600 z-50 ml-auto fixed top-0 right-0 h-screen"
+      >
+        <ul>
+          <li class="pr-8 m-2 w-full">
+            <button
+              onclick={() => (menuState = false)}
               data-astro-prefetch
-              class="relative inline-block group"
+              class="relative group inline-block cursor-pointer"
             >
-              About
+              Close
               <span
                 class="absolute left-0 -bottom-0.5 h-0.5 rounded-full w-full bg-current origin-right scale-x-0 transition-transform duration-150 ease-in-out group-hover:origin-left group-hover:scale-x-100"
               ></span>
-            </a>
+            </button>
           </li>
-
-          <li class="ml-2 mr-2 text-2xl" in:fade={{ delay: 1200 }}>
-            <a
-              href="/projects"
-              data-astro-prefetch
-              class="relative inline-block group"
-            >
-              Projects
-              <span
-                class="absolute left-0 -bottom-0.5 h-0.5 rounded-full w-full bg-current origin-right scale-x-0 transition-transform duration-150 ease-in-out group-hover:origin-left group-hover:scale-x-100"
-              ></span>
-            </a>
-          </li>
-
-          <li class="ml-2 mr-auto text-2xl" in:fade={{ delay: 1800 }}>
-            <a
-              href="/blog"
-              data-astro-prefetch
-              class="relative inline-block group"
-            >
-              Blog
-              <span
-                class="absolute left-0 -bottom-0.5 h-0.5 rounded-full w-full bg-current origin-right scale-x-0 transition-transform duration-150 ease-in-out group-hover:origin-left group-hover:scale-x-100"
-              ></span>
-            </a>
-          </li>
+          {#each navLinks as item}
+            <li class="pr-8 m-2 w-full">
+              <a
+                href={item.location}
+                data-astro-prefetch
+                class="relative group inline-block"
+              >
+                {item.name}
+                <span
+                  class="absolute left-0 -bottom-0.5 h-0.5 rounded-full w-full bg-current origin-right scale-x-0 transition-transform duration-150 ease-in-out group-hover:origin-left group-hover:scale-x-100"
+                ></span>
+              </a>
+            </li>
+          {/each}
         </ul>
-      </div>
+      </nav>
     </menu>
   {/if}
 </header>
+
+<style scoped>
+  .nav-button,
+  .nav-button::before,
+  .nav-button::after {
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+  }
+
+  .nav-button::before {
+    content: " ";
+    margin-top: -8px;
+  }
+
+  .nav-button {
+    margin-top: 8px;
+  }
+
+  .nav-button::after {
+    content: " ";
+    margin-top: 8px;
+  }
+
+  #nav-toggle:checked + .nav-button-container .nav-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+  }
+
+  #nav-toggle:checked + .nav-button-container .nav-button {
+    background: rgba(255, 255, 255, 0);
+  }
+
+  #nav-toggle:checked + .nav-button-container .nav-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+  }
+</style>

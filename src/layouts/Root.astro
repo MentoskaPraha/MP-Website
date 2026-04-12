@@ -55,6 +55,36 @@ if (siteTitle != null) pageTitle = siteTitle;
     <title>{pageTitle}</title>
   </head>
   <body class="bg-zinc-800 text-white font-sans select-none">
-    <slot />
+    <div id="app">
+      <slot />
+    </div>
+
+    <div id="screenSizeError" class="bg-black m-3 p-1 text-center rounded-lg">
+      <h1 class="mb-1 underline text-2xl">Your Screen is too Small!</h1>
+      <p class="text-sm">
+        Your screen is too small to display this website. Please come back on a
+        device with a width of at least 320px.
+      </p>
+    </div>
   </body>
 </html>
+
+<style scoped>
+  #app {
+    display: block;
+  }
+
+  #screenSizeError {
+    display: none;
+  }
+
+  @media screen and (max-width: 319px) {
+    #screenSizeError {
+      display: block;
+    }
+
+    #app {
+      display: none;
+    }
+  }
+</style>

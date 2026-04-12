@@ -22,28 +22,41 @@ const quote = quotes[Math.floor(Math.random() * quotes.length)];
     </p>
   </div>
 
-  <div>
-    <h2>Copyright</h2>
-    <p>
-      All images and content made by me is licensed under <a
-        href="https://creativecommons.org/licenses/by-sa/4.0/"
-        target="_blank"
-        rel="noopener noreferrer">CC BY-SA 4.0</a
-      >, while logos are the property of the company/organisation/product they
-      represent.
-    </p>
-    <h2>Privacy Policy</h2>
-    <p>
-      This website does not collect any data from the user nor does it store any
-      cookie or data on the user's browser.
-    </p>
-  </div>
-  <div>
+  <ul class="my-8 md:grid md:grid-cols-2 md:gap-4 md:mx-4">
+    <li class="mx-4">
+      <h2 class="text-center underline text-lg">Copyright</h2>
+      <p class="text-justify">
+        All images and content made by me is licensed under a <a
+          href="https://creativecommons.org/licenses/by-sa/4.0/"
+          target="_blank"
+          rel="noopener noreferrer">CC BY-SA 4.0</a
+        > license, while logos and images not made or owned by me are the property
+        of the company/organisation/product they represent.
+      </p>
+    </li>
+    <li class="mx-4 mt-6 md:mt-0">
+      <h2 class="text-center underline text-lg">Privacy Policy</h2>
+      <p class="text-justify">
+        This website does not collect any data from the user nor does it store
+        any cookie or data on the user's browser.
+      </p>
+    </li>
+  </ul>
+
+  <div class="text-center">
     <a
       href="https://github.com/MentoskaPraha/MP-Website"
       target="_blank"
-      rel="noopener noreferrer">Source Code</a
+      rel="noopener noreferrer"
+      class="mr-4 relative group"
+      >Source Code<span
+        class="absolute left-0 -bottom-0.5 h-0.5 rounded-full w-full bg-current origin-right scale-x-0 transition-transform duration-150 ease-in-out group-hover:origin-left group-hover:scale-x-100"
+      ></span></a
     >
-    <a href="mailto:contact+website@mentoskapraha.com">Email</a>
+    <a href="mailto:contact+website@mentoskapraha.com" class="relative group"
+      >Email<span
+        class="absolute left-0 -bottom-0.5 h-0.5 rounded-full w-full bg-current origin-right scale-x-0 transition-transform duration-150 ease-in-out group-hover:origin-left group-hover:scale-x-100"
+      ></span></a
+    >
   </div>
 </footer>

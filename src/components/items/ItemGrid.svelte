@@ -16,29 +16,12 @@
     >;
   } = $props();
 
-  let colNum = $state(8);
+  let win_width = $state(0);
+  let colNum = $derived(Math.floor((win_width - 32) / 144));
   let rowNum = $derived(Math.ceil(items.length / colNum));
-
-  function updateGridSize() {
-    let grid_width = 128 * colNum + 16 * colNum + 16 * 2;
-    const win_width = window.innerWidth;
-    if (grid_width > win_width) {
-      while (grid_width > win_width) {
-        colNum--;
-        grid_width = grid_width - (128 + 16);
-      }
-    } else if (grid_width + 128 + 16 < win_width) {
-      while (grid_width + 128 + 16 < win_width) {
-        colNum++;
-        grid_width = grid_width + (128 + 16);
-      }
-    }
-  }
-
-  onMount(() => updateGridSize());
 </script>
 
-<svelte:window onresize={updateGridSize} />
+<svelte:window bind:innerWidth={win_width} />
 
 <div class="flex justify-center">
   <div

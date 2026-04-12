@@ -4,25 +4,41 @@
   import { crossfade } from "svelte/transition";
   import { quintOut } from "svelte/easing";
 
-  const [send, recieve] = crossfade({
+  const [outBig, inBig] = crossfade({
+    duration: 1000,
+    easing: quintOut
+  });
+
+  const [outSmall, inSmall] = crossfade({
     duration: 1000,
     easing: quintOut
   });
 
   let name = $state("MentoskaPraha");
   let accessibilityName = $state("MentoskaPraha");
-  let imageHovered = $state(false);
+  let bigImageHovered = $state(false);
+  let smallImageHovered = $state(false);
   const age = Math.abs(
     new Date(Date.now() - Date.parse("2007")).getUTCFullYear() - 1970
   );
 
-  function onMouseEnter() {
-    imageHovered = true;
+  function onMouseEnterBig() {
+    bigImageHovered = true;
     nameTransition();
   }
 
-  function onMouseLeave() {
-    imageHovered = false;
+  function onMouseLeaveBig() {
+    bigImageHovered = false;
+    nameTransition();
+  }
+
+  function onMouseEnterSmall() {
+    smallImageHovered = true;
+    nameTransition();
+  }
+
+  function onMouseLeaveSmall() {
+    smallImageHovered = false;
     nameTransition();
   }
 
@@ -33,14 +49,16 @@
 
     let iteration = 0;
 
-    name = imageHovered ? realName : displayName;
+    name = bigImageHovered || smallImageHovered ? realName : displayName;
 
     let interval = setInterval(() => {
       name = name
         .split("")
         .map((_letter, index) => {
           if (index < iteration) {
-            return imageHovered ? realName[index] : displayName[index];
+            return bigImageHovered || smallImageHovered
+              ? realName[index]
+              : displayName[index];
           } else {
             return letters[Math.floor(Math.random() * 26)];
           }
@@ -57,27 +75,27 @@
   }
 </script>
 
-<div class="flex w-2xl mx-auto mt-4">
+<div class="flex md:w-2xl mx-auto mt-4 items-center">
   <div
-    class="relative w-[300px] h-[300px] rounded-lg overflow-hidden bg-white"
+    class="relative w-[300px] h-[300px] rounded-lg overflow-hidden bg-white hidden md:flex"
     role="button"
     tabindex="0"
-    onmouseenter={onMouseEnter}
-    onmouseleave={onMouseLeave}
-    onfocus={onMouseEnter}
-    onblur={onMouseLeave}
-    aria-pressed={imageHovered}
+    onmouseenter={onMouseEnterBig}
+    onmouseleave={onMouseLeaveBig}
+    onfocus={onMouseEnterBig}
+    onblur={onMouseLeaveBig}
+    aria-pressed={bigImageHovered}
     aria-label="Reveals my real identity by changing the image and name."
   >
-    {#if imageHovered}
+    {#if bigImageHovered}
       <img
         src={Placeholder.src}
         alt="Me (Filip J. Stary)"
         width="300"
         height="300"
         class="absolute inset-0 w-full h-full object-cover"
-        in:recieve={{ key: imageHovered }}
-        out:send={{ key: imageHovered }}
+        in:inBig={{ key: bigImageHovered }}
+        out:outBig={{ key: bigImageHovered }}
       />
     {:else}
       <img
@@ -86,13 +104,47 @@
         width="300"
         height="300"
         class="absolute inset-0 w-full h-full object-cover"
-        in:recieve={{ key: imageHovered }}
-        out:send={{ key: imageHovered }}
+        in:inBig={{ key: bigImageHovered }}
+        out:outBig={{ key: bigImageHovered }}
       />
     {/if}
   </div>
 
-  <div class="w-[372px] ml-4">
+  <div class="w-[320px] md:w-[372px] mx-auto md:mr-0 md:ml-4 relative">
+    <div
+      class="absolute w-[125px] h-[125px] rounded-lg bg-white left-48 md:hidden"
+      role="button"
+      tabindex="0"
+      onmouseenter={onMouseEnterSmall}
+      onmouseleave={onMouseLeaveSmall}
+      onfocus={onMouseEnterSmall}
+      onblur={onMouseLeaveSmall}
+      aria-pressed={smallImageHovered}
+      aria-label="Reveals my real identity by changing the image and name."
+    >
+      {#if smallImageHovered}
+        <img
+          src={Placeholder.src}
+          alt="Me (Filip J. Stary)"
+          width="125"
+          height="125"
+          class="absolute inset-0 w-full h-full object-cover"
+          in:inSmall={{ key: smallImageHovered }}
+          out:outSmall={{ key: smallImageHovered }}
+        />
+      {:else}
+        <img
+          src={Avatar.src}
+          alt="My Avatar (MentoskaPraha)"
+          width="125"
+          height="125"
+          class="absolute inset-0 w-full h-full object-cover"
+          in:inSmall={{ key: smallImageHovered }}
+          out:outSmall={{ key: smallImageHovered }}
+        />
+      {/if}
+    </div>
+
     <h2 class="text-3xl font-bold underline">About Me</h2>
     <div class="flex">
       <h3>Name:</h3>
