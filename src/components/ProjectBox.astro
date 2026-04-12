@@ -1,0 +1,29 @@
+---
+import { Image } from "astro:assets";
+import Placeholder from "@assets/placeholder.svg";
+
+interface Props {
+  title: string;
+  description: string;
+  image: ImageMetadata | undefined;
+  link: string | null;
+  code: string;
+}
+
+const { title, description, image, link, code } = Astro.props;
+---
+
+<div class="flex md:w-2xl mx-auto my-8 items-center">
+  <Image
+    src={image != undefined ? image : Placeholder}
+    alt=`Logo of ${title}`
+    width="300"
+    height="300"
+    class="relative inset-0 object-cover w-[300px] h-[300px] rounded-lg overflow-hidden bg-white hidden md:flex"
+  />
+
+  <div class="w-[320px] md:w-[372px] mx-auto md:mr-0 md:ml-4 relative">
+    <h3 class="text-3xl font-bold underline">{title}</h3>
+    <p class="text-justify select-text">{description}</p>
+  </div>
+</div>

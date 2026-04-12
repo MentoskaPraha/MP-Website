@@ -7,7 +7,7 @@ const games = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    link: z.string().nullable()
+    link: z.string()
   })
 });
 
@@ -20,9 +20,20 @@ const technology = defineCollection({
       z.object({
         title: z.string(),
         description: z.string(),
-        link: z.string().nullable()
+        link: z.string()
       })
     )
+  })
+});
+
+const projects = defineCollection({
+  loader: file("content/projects.json"),
+  schema: z.object({
+    id: z.string(),
+    title: z.string(),
+    description: z.string(),
+    link: z.string().nullable(),
+    code: z.string()
   })
 });
 
@@ -34,4 +45,4 @@ const quotes = defineCollection({
   })
 });
 
-export const collections = { games, technology, quotes };
+export const collections = { games, technology, projects, quotes };

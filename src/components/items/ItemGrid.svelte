@@ -1,7 +1,6 @@
 <script lang="ts">
   import ItemDisplay from "@components/items/ItemDisplay.svelte";
   import type { ItemDisplayItem } from "@types";
-  import { onMount } from "svelte";
 
   const {
     items,

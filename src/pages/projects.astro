@@ -1,10 +1,32 @@
 ---
 import Layout from "@layouts/Global.astro";
+import ProjectBox from "@components/ProjectBox.astro";
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
+//TODO Fix import not working
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/projects/*.{webp,svg}",
+  {
+    eager: true
+  }
+);
 ---
 
 <Layout
   title="Projects"
   description="Browse through some of the amazing projects that I have created."
 >
-  Project placeholder.
+  <h2 class="text-center text-3xl font-bold underline mb-4">Projects</h2>
+  {
+    projects.map((entry) => (
+      <ProjectBox
+        title={entry.data.title}
+        description={entry.data.description}
+        link={entry.data.link}
+        code={entry.data.code}
+        image={images[entry.data.id]?.default}
+      />
+    ))
+  }
 </Layout>

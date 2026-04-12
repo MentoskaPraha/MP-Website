@@ -23,17 +23,16 @@ No contributions are accepted at this time. If you find an issue, feel free to r
   - [ ] The technology I use organised by project
   - [ ] The games I'd recommend
   - [ ] Contact and social links
-- [ ] Footer
-  - [ ] Licensing stuff
-  - [ ] Privacy Policy stuff
-  - [ ] Contact
+- [x] Footer
+  - [x] Licensing stuff
+  - [x] Privacy Policy stuff
+  - [x] Contact
 - [ ] Project page
   - [ ] A full view of all of my projects
   - [ ] Details about each project
     - title
-    - description
+    - description (should include technology)
     - image
-    - tech stack
     - links to source, the project and blog (if applicable)
 - [ ] Blog Page
   - [ ] RSS feeds, one for each type of blog post and one for everything

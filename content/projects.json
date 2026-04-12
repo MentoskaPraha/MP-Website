@@ -1,0 +1,16 @@
+[
+  {
+    "id": "website",
+    "title": "This Website",
+    "description": "You're here. This website is made with Astro, Svelte, TailwindCSS and Typescript. I really don't have much more to say about this.",
+    "link": "https://www.mentoskapraha.com",
+    "code": "https://github.com/MentoskaPraha/MP-Website"
+  },
+  {
+    "id": "room-scheduler",
+    "title": "Room Scheduler",
+    "description": "This project is my IB DP Computer Science Internal Assessment and is therefore not only very broken, unstable and not suitable for production use, but also something that will most likely never be touched again. It was made with Flutter and Dart.",
+    "link": null,
+    "code": "https://github.com/MentoskaPraha/Room-Scheduler"
+  }
+]

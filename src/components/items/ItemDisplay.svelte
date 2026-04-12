@@ -1,6 +1,5 @@
 <script lang="ts">
   import Placeholder from "@assets/placeholder.svg";
-  import { Image } from "astro:assets";
 
   const {
     title,
@@ -36,7 +35,7 @@
   </div>
 </div>
 
-<style>
+<style scoped>
   #container:hover #overlay {
     height: 100%;
   }
