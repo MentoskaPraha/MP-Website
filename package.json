@@ -12,13 +12,15 @@
   },
   "dependencies": {
     "@astrojs/check": "0.9.8",
+    "@astrojs/cloudflare": "^13.1.9",
     "@astrojs/sitemap": "3.7.2",
     "@astrojs/svelte": "8.0.4",
     "@tailwindcss/vite": "^4.2.2",
     "astro": "6.1.5",
     "svelte": "^5.55.3",
     "tailwindcss": "^4.2.2",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "wrangler": "^4.82.1"
   },
   "devDependencies": {
     "prettier": "^3.8.2",
@@ -32,5 +34,8 @@
       "esbuild",
       "sharp"
     ]
+  },
+  "overrides": {
+    "vite": "^7"
   }
 }

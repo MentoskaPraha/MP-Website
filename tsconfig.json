@@ -3,12 +3,24 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@pages/*": ["src/pages/*"],
-      "@assets/*": ["src/assets/*"],
-      "@css": ["src/styles/global.css"],
-      "@types": ["src/types.d.ts"]
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@layouts/*": [
+        "src/layouts/*"
+      ],
+      "@pages/*": [
+        "src/pages/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ],
+      "@css": [
+        "src/styles/global.css"
+      ],
+      "@types": [
+        "src/types.d.ts"
+      ]
     }
   },
   "include": [
@@ -16,6 +28,7 @@
     "src/**/*.d.ts",
     "src/**/*.ts",
     "src/**/*.astro",
-    "src/**/*.svelte"
+    "src/**/*.svelte",
+    "./worker-configuration.d.ts"
   ]
 }
