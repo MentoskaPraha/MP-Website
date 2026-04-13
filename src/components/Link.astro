@@ -1,10 +1,8 @@
 ---
-import { Image } from "astro:assets";
-
 interface Props {
   title: string;
   link: string;
-  image: ImageMetadata;
+  image: string;
   large: boolean;
 }
 
@@ -21,7 +19,7 @@ const { title, link, image, large } = Astro.props;
     id="container"
     class=`${large ? "w-24" : "w-16"} relative inline-block rounded-full border-4 border-black group`
   >
-    <Image
+    <img
       class="w-full h-auto bg-white rounded-full"
       src={image}
       width={large ? "96" : "64"}

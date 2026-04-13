@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import Placeholder from "@assets/placeholder.svg";
 import Link from "@components/Link.astro";
 import SourceIcon from "@assets/source_icon.svg";
@@ -8,7 +7,7 @@ import LinkIcon from "@assets/link_icon.svg";
 interface Props {
   title: string;
   description: string;
-  image: ImageMetadata | undefined;
+  image: string | undefined;
   link: string | null;
   code: string;
 }
@@ -17,8 +16,8 @@ const { title, description, image, link, code } = Astro.props;
 ---
 
 <div class="flex md:w-2xl mx-auto my-8 items-center">
-  <Image
-    src={image != undefined ? image : Placeholder}
+  <img
+    src={image != undefined ? image : Placeholder.src}
     alt=`Logo of ${title}`
     width="300"
     height="300"
@@ -29,13 +28,13 @@ const { title, description, image, link, code } = Astro.props;
     <h3 class="text-3xl font-bold underline">{title}</h3>
     <p class="text-justify select-text">{description}</p>
     <ul class="mt-4">
-      <Link title="Source Code" link={code} image={SourceIcon} large={false} />
+      <Link title="Source Code" link={code} image={SourceIcon.src} large={false} />
       {
         link != null ? (
           <Link
             title="Project Link"
             link={link}
-            image={LinkIcon}
+            image={LinkIcon.src}
             large={false}
           />
         ) : null

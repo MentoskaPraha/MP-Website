@@ -35,7 +35,7 @@ const images = Object.fromEntries(
         description={entry.data.description}
         link={entry.data.link}
         code={entry.data.code}
-        image={images[entry.data.id]?.default}
+        image={images[entry.data.id]?.default.src}
       />
     ))
   }
