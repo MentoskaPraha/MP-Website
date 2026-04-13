@@ -1,6 +1,6 @@
 <script lang="ts">
   import Avatar from "@assets/avatar.svg";
-  import Placeholder from "@assets/placeholder.svg";
+  import Me from "@assets/me.webp";
   import { crossfade } from "svelte/transition";
   import { quintOut } from "svelte/easing";
 
@@ -89,7 +89,7 @@
   >
     {#if bigImageHovered}
       <img
-        src={Placeholder.src}
+        src={Me.src}
         alt="Me (Filip J. Stary)"
         width="300"
         height="300"
@@ -124,7 +124,7 @@
     >
       {#if smallImageHovered}
         <img
-          src={Placeholder.src}
+          src={Me.src}
           alt="Me (Filip J. Stary)"
           width="125"
           height="125"

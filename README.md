@@ -18,8 +18,8 @@ No contributions are accepted at this time. If you find an issue, feel free to r
 - [x] Chose a font
 - [x] Hamburger menu for navigation between pages
 - [x] Navbar
-- [ ] About Page
-  - [ ] Quick summary about me (IRL name included)
+- [x] About Page
+  - [x] Quick summary about me (IRL name included)
   - [x] The technology I use organised by project
   - [x] The games I'd recommend
   - [x] Contact and social links
