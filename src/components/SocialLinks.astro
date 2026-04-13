@@ -1,0 +1,33 @@
+---
+import Link from "@components/Link.astro";
+import Github from "@assets/social/github.svg";
+import Discord from "@assets/social/discord.svg";
+import Youtube from "@assets/social/youtube.svg";
+---
+
+<ul class="flex justify-center">
+  <li class="mx-1 xxs:mx-2">
+    <Link
+      title="Discord"
+      link="https://discord.gg/QKSDMaYg5R"
+      image={Discord}
+      large={true}
+    />
+  </li>
+  <li class="mx-1 xxs:mx-2">
+    <Link
+      title="Youtube"
+      link="https://www.youtube.com/@mentoskapraha"
+      image={Youtube}
+      large={true}
+    />
+  </li>
+  <li class="mx-1 xxs:mx-2">
+    <Link
+      title="Github"
+      link="https://github.com/MentoskaPraha"
+      image={Github}
+      large={true}
+    />
+  </li>
+</ul>

@@ -9,12 +9,7 @@
   }: {
     title: string;
     items: ItemDisplayItem[];
-    images: Record<
-      string,
-      {
-        default: ImageMetadata;
-      }
-    >;
+    images: Record<string, string>;
   } = $props();
 </script>
 
@@ -27,14 +22,14 @@
           <ItemDisplay
             title={item.title}
             description={item.description}
-            image={images[item.id]?.default}
+            image={images[item.id]}
           />
         </a>
       {:else}
         <ItemDisplay
           title={item.title}
           description={item.description}
-          image={images[item.id]?.default}
+          image={images[item.id]}
         />
       {/if}
     {/each}

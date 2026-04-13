@@ -5,26 +5,32 @@ interface Props {
   title: string;
   link: string;
   image: ImageMetadata;
+  large: boolean;
 }
 
-const { title, link, image } = Astro.props;
+const { title, link, image, large } = Astro.props;
 ---
 
-<a href={link} target="_blank" rel="noopener noreferrer">
+<a
+  href={link}
+  target="_blank"
+  rel="noopener noreferrer"
+  class=`${large ? "w-24" : "w-16"} relative inline-block rounded-full`
+>
   <div
     id="container"
-    class="w-16 relative inline-block rounded-full group border-4 border-black"
+    class=`${large ? "w-24" : "w-16"} relative inline-block rounded-full border-4 border-black group`
   >
     <Image
       class="w-full h-auto bg-white rounded-full"
       src={image}
-      width="64"
-      height="64"
+      width={large ? "96" : "64"}
+      height={large ? "96" : "64"}
       alt=`${title} link icon`
     />
     <span
       id="tooltip"
-      class="w-28 top-full left-1/2 mt-1.5 -ml-14 bg-gray-600 text-white text-center px-0.5 absolute rounded-sm z-10 opacity-0 group-hover:opacity-100 transition-opacity"
+      class="w-28 top-full left-1/2 mt-1.5 -ml-14 bg-gray-600 text-white text-center px-0.5 absolute rounded-sm z-10 invisible group-hover:visible"
     >
       {title}
     </span>

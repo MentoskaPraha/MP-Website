@@ -164,8 +164,7 @@
       Hello, this is the part where I talk about myself. I'm not sure what to
       say. My parents would say I'm amazing, which I agree with, but that's a
       bias assessment. I make things, sometimes, mainly computer programs.
-      Sometimes those things are even good. I also play video games and enjoy
-      certain movies and tv shows.
+      Sometimes those things are even good. I also play video games.
     </p>
   </div>
 </div>

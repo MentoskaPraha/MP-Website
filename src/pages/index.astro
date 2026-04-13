@@ -2,14 +2,9 @@
 import Layout from "@layouts/Root.astro";
 import Banner from "@components/Banner.svelte";
 import Navbar from "@components/Navbar.svelte";
-import Footer from "@components/Footer.astro";
 ---
 
 <Layout description="The official website of MentoskaPraha. Enjoy!">
   <Banner client:load />
   <Navbar client:load />
-  <div class="h-96">
-    <p class="select-text">Lorem Ipsum</p>
-  </div>
-  <Footer />
 </Layout>

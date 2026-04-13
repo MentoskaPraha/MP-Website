@@ -29,10 +29,15 @@ const { title, description, image, link, code } = Astro.props;
     <h3 class="text-3xl font-bold underline">{title}</h3>
     <p class="text-justify select-text">{description}</p>
     <ul class="mt-4">
-      <Link title="Source Code" link={code} image={SourceIcon} />
+      <Link title="Source Code" link={code} image={SourceIcon} large={false} />
       {
         link != null ? (
-          <Link title="Project Link" link={link} image={LinkIcon} />
+          <Link
+            title="Project Link"
+            link={link}
+            image={LinkIcon}
+            large={false}
+          />
         ) : null
       }
     </ul>

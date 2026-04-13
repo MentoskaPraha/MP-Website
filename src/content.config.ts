@@ -18,6 +18,7 @@ const technology = defineCollection({
     title: z.string(),
     tech: z.array(
       z.object({
+        id: z.string(),
         title: z.string(),
         description: z.string(),
         link: z.string()

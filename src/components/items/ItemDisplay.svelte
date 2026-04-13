@@ -8,14 +8,14 @@
   }: {
     title: string;
     description: string;
-    image: ImageMetadata | undefined;
+    image: string | undefined;
   } = $props();
 </script>
 
-<div id="container" class="w-32 relative rounded-sm">
+<div id="container" class="w-32 h-32 relative rounded-sm">
   <img
-    class="w-full h-auto bg-white block rounded-sm"
-    src={image == undefined ? Placeholder.src : image.src}
+    class="w-full h-full bg-white block rounded-sm"
+    src={image == undefined ? Placeholder.src : image}
     width="128"
     height="128"
     alt="{title} Logo"

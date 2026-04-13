@@ -1,10 +1,18 @@
 ---
-import Layout from "@layouts/Global.astro";
+import Layout from "@layouts/Root.astro";
+import Navbar from "@components/Navbar.svelte";
 ---
 
 <Layout
   siteTitle="MP's Blog"
   description="My amazing awesome blog where I share some of my opitions and vent about random issues."
 >
-  Blog placeholder.
+  <Navbar client:load />
+  <div class="bg-black m-3 p-1 text-center rounded-lg">
+    <h1 class="mb-1 underline text-2xl">There's Nothing Here! Yet...</h1>
+    <p class="text-sm">
+      I have yet to write anything for my blog. Once I do, it'll be here. I
+      might not even keep this to be honest.
+    </p>
+  </div>
 </Layout>

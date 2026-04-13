@@ -5,6 +5,7 @@ import type { ItemDisplayItem, ItemStackGroup } from "@types";
 import Layout from "@layouts/Global.astro";
 import ItemStack from "@components/items/ItemStack.svelte";
 import ItemGrid from "@components/items/ItemGrid.svelte";
+import SocialLinks from "@components/SocialLinks.astro";
 
 const technology = (await getCollection("technology")).map((entry) => {
   return {
@@ -35,7 +36,7 @@ const tech_images = Object.fromEntries(
       .split("/")
       .at(-1)!
       .replace(/\.[^.]+$/, "");
-    return [key, value];
+    return [key, value.default.src];
   })
 );
 const games_images = Object.fromEntries(
@@ -51,7 +52,7 @@ const games_images = Object.fromEntries(
       .split("/")
       .at(-1)!
       .replace(/\.[^.]+$/, "");
-    return [key, value];
+    return [key, value.default.src];
   })
 );
 ---
@@ -64,6 +65,16 @@ const games_images = Object.fromEntries(
 
   <div class="mt-8">
     <h2 class="text-center text-3xl font-bold underline mb-3">
+      Social Media Links
+    </h2>
+    <SocialLinks />
+    <p class="text-center select-text">
+      *Any social media listed here is most likely fake.
+    </p>
+  </div>
+
+  <div class="mt-8">
+    <h2 class="text-center text-3xl font-bold underline mb-3">
       Technology Stacks
     </h2>
     <div class="md:flex justify-center">
@@ -73,6 +84,7 @@ const games_images = Object.fromEntries(
             title={stack.title}
             items={stack.items}
             images={tech_images}
+            client:visible
           />
         ))
       }
@@ -80,7 +92,9 @@ const games_images = Object.fromEntries(
   </div>
 
   <div class="mt-8">
-    <h2 class="text-center text-3xl font-bold underline mb-3">Video Games</h2>
+    <h2 class="text-center text-3xl font-bold underline mb-3">
+      Video Games I Enjoy
+    </h2>
     <ItemGrid images={games_images} items={games} client:visible />
   </div>
 </Layout>

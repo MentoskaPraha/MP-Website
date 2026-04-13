@@ -22,8 +22,8 @@
         "link": "https://svelte.dev/"
       },
       {
-        "id": "tailwind",
-        "title": "Tailwind",
+        "id": "tailwindcss",
+        "title": "TailwindCSS",
         "description": "Used to style this website and make it look beautiful.",
         "link": "https://tailwindcss.com/"
       }

@@ -42,7 +42,7 @@
     "link": "https://www.gog.com/en/game/transport_fever_2"
   },
   {
-    "id": "rot",
+    "id": "ron",
     "title": "Ready or Not",
     "description": "S.W.A.T. simulator. It is realistic and you will get PTSD.",
     "link": "https://store.steampowered.com/app/1144200"
@@ -64,5 +64,35 @@
     "title": "Entry Point: Freelancer's Cut",
     "description": "Remake of Entry Point with Operators engine.",
     "link": "https://www.roblox.com/games/740581899"
+  },
+  {
+    "id": "wandering-village",
+    "title": "The Wandering Village",
+    "description": "City builder where you build on the back of Onbu.",
+    "link": "https://store.steampowered.com/app/1121640"
+  },
+  {
+    "id": "road96",
+    "title": "Road 96",
+    "description": "Go on a road trip to cross the border and escape a dictatorship.",
+    "link": "https://store.steampowered.com/app/1466640"
+  },
+  {
+    "id": "firewatch",
+    "title": "Firewatch",
+    "description": "Lovely little hiking game with beautiful music, visuals and story.",
+    "link": "https://store.steampowered.com/app/383870"
+  },
+  {
+    "id": "hifi-rush",
+    "title": "Hi-Fi Rush",
+    "description": "An action game where everything moves to the beat of the music.",
+    "link": "https://store.steampowered.com/app/1817230"
+  },
+  {
+    "id": "carrion",
+    "title": "CARRION",
+    "description": "Ever seen any horror movie with a monster? That, but you're the monster.",
+    "link": "https://store.steampowered.com/app/953490"
   }
 ]

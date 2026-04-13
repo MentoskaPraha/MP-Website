@@ -20,9 +20,9 @@ No contributions are accepted at this time. If you find an issue, feel free to r
 - [x] Navbar
 - [ ] About Page
   - [ ] Quick summary about me (IRL name included)
-  - [ ] The technology I use organised by project
-  - [ ] The games I'd recommend
-  - [ ] Contact and social links
+  - [x] The technology I use organised by project
+  - [x] The games I'd recommend
+  - [x] Contact and social links
 - [x] Footer
   - [x] Licensing stuff
   - [x] Privacy Policy stuff

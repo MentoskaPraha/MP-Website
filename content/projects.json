@@ -9,7 +9,7 @@
   {
     "id": "room-scheduler",
     "title": "Room Scheduler",
-    "description": "This project is my IB DP Computer Science Internal Assessment and is therefore not only very broken, unstable and not suitable for production use, but also something that will most likely never be touched again. It was made with Flutter and Dart.",
+    "description": "This project is my IB DP Computer Science Internal Assessment and is therefore not only very broken, unstable and not suitable for production use, but also something that will most likely never be touched again. It was made with Flutter and Dart. Oh there's no icon for this project, hence the Flutter logo.",
     "link": null,
     "code": "https://github.com/MentoskaPraha/Room-Scheduler"
   }
