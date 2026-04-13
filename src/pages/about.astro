@@ -13,7 +13,6 @@ const technology = (await getCollection("technology")).map((entry) => {
     items: entry.data.tech as ItemDisplayItem[]
   } as ItemStackGroup;
 });
-
 const games = (await getCollection("games")).map((entry) => {
   return {
     id: entry.id,
@@ -22,6 +21,39 @@ const games = (await getCollection("games")).map((entry) => {
     link: entry.data.link
   } as ItemDisplayItem;
 });
+
+const tech_images = Object.fromEntries(
+  Object.entries(
+    import.meta.glob<{ default: ImageMetadata }>(
+      "/src/assets/technology/*.{webp,svg}",
+      {
+        eager: true
+      }
+    )
+  ).map(([path, value]) => {
+    const key = path
+      .split("/")
+      .at(-1)!
+      .replace(/\.[^.]+$/, "");
+    return [key, value];
+  })
+);
+const games_images = Object.fromEntries(
+  Object.entries(
+    import.meta.glob<{ default: ImageMetadata }>(
+      "/src/assets/games/*.{webp,svg}",
+      {
+        eager: true
+      }
+    )
+  ).map(([path, value]) => {
+    const key = path
+      .split("/")
+      .at(-1)!
+      .replace(/\.[^.]+$/, "");
+    return [key, value];
+  })
+);
 ---
 
 <Layout
@@ -40,12 +72,7 @@ const games = (await getCollection("games")).map((entry) => {
           <ItemStack
             title={stack.title}
             items={stack.items}
-            images={import.meta.glob<{ default: ImageMetadata }>(
-              "/src/assets/tech/*.{webp,svg}",
-              {
-                eager: true
-              }
-            )}
+            images={tech_images}
           />
         ))
       }
@@ -54,15 +81,6 @@ const games = (await getCollection("games")).map((entry) => {
 
   <div class="mt-8">
     <h2 class="text-center text-3xl font-bold underline mb-3">Video Games</h2>
-    <ItemGrid
-      images={import.meta.glob<{ default: ImageMetadata }>(
-        "/src/assets/games/*.{webp,svg}",
-        {
-          eager: true
-        }
-      )}
-      items={games}
-      client:visible
-    />
+    <ItemGrid images={games_images} items={games} client:visible />
   </div>
 </Layout>

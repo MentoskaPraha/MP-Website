@@ -2,7 +2,7 @@
   {
     "id": "website",
     "title": "This Website",
-    "description": "You're here. This website is made with Astro, Svelte, TailwindCSS and Typescript. I really don't have much more to say about this.",
+    "description": "You're here. This website is made with Astro, Svelte, TailwindCSS and Typescript. I really don't have much more to say about this. Well, maybe apart from the fact I remade it like a billion times because I was never happy with it, this is it's final version though. Unless I decide to remake it again.",
     "link": "https://www.mentoskapraha.com",
     "code": "https://github.com/MentoskaPraha/MP-Website"
   },

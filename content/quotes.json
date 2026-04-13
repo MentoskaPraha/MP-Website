@@ -8,5 +8,10 @@
     "id": 2,
     "quote": "Live long and prosper.",
     "author": "Spock"
+  },
+  {
+    "id": 3,
+    "quote": "I'm gonna have to science the sh*t out of this.",
+    "author": "Mark Watney"
   }
 ]

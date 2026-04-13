@@ -161,10 +161,11 @@
     </div>
     <br />
     <p class="text-justify select-text">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut modi
-      voluptatum commodi obcaecati fugit, mollitia aspernatur distinctio fugiat?
-      Quasi animi sed molestiae. Quos nulla consectetur pariatur facilis ipsa
-      quaerat? Iste.
+      Hello, this is the part where I talk about myself. I'm not sure what to
+      say. My parents would say I'm amazing, which I agree with, but that's a
+      bias assessment. I make things, sometimes, mainly computer programs.
+      Sometimes those things are even good. I also play video games and enjoy
+      certain movies and tv shows.
     </p>
   </div>
 </div>

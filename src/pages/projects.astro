@@ -4,12 +4,22 @@ import ProjectBox from "@components/ProjectBox.astro";
 import { getCollection } from "astro:content";
 
 const projects = await getCollection("projects");
-//TODO Fix import not working
-const images = import.meta.glob<{ default: ImageMetadata }>(
-  "/src/assets/projects/*.{webp,svg}",
-  {
-    eager: true
-  }
+
+const images = Object.fromEntries(
+  Object.entries(
+    import.meta.glob<{ default: ImageMetadata }>(
+      "/src/assets/projects/*.{webp,svg}",
+      {
+        eager: true
+      }
+    )
+  ).map(([path, value]) => {
+    const key = path
+      .split("/")
+      .at(-1)!
+      .replace(/\.[^.]+$/, "");
+    return [key, value];
+  })
 );
 ---
 
@@ -17,7 +27,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
   title="Projects"
   description="Browse through some of the amazing projects that I have created."
 >
-  <h2 class="text-center text-3xl font-bold underline mb-4">Projects</h2>
+  <h2 class="text-center text-3xl font-bold underline my-4">Projects</h2>
   {
     projects.map((entry) => (
       <ProjectBox

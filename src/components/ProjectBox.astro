@@ -1,6 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import Placeholder from "@assets/placeholder.svg";
+import Link from "@components/Link.astro";
+import SourceIcon from "@assets/source_icon.svg";
+import LinkIcon from "@assets/link_icon.svg";
 
 interface Props {
   title: string;
@@ -25,5 +28,13 @@ const { title, description, image, link, code } = Astro.props;
   <div class="w-[320px] md:w-[372px] mx-auto md:mr-0 md:ml-4 relative">
     <h3 class="text-3xl font-bold underline">{title}</h3>
     <p class="text-justify select-text">{description}</p>
+    <ul class="mt-4">
+      <Link title="Source Code" link={code} image={SourceIcon} />
+      {
+        link != null ? (
+          <Link title="Project Link" link={link} image={LinkIcon} />
+        ) : null
+      }
+    </ul>
   </div>
 </div>

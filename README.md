@@ -27,9 +27,9 @@ No contributions are accepted at this time. If you find an issue, feel free to r
   - [x] Licensing stuff
   - [x] Privacy Policy stuff
   - [x] Contact
-- [ ] Project page
-  - [ ] A full view of all of my projects
-  - [ ] Details about each project
+- [x] Project page
+  - [x] A full view of all of my projects
+  - [x] Details about each project
     - title
     - description (should include technology)
     - image
