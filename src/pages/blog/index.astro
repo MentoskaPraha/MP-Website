@@ -1,0 +1,28 @@
+---
+import Layout from "@layouts/Global.astro";
+import BlogItem from "@components/BlogItem.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog"));
+---
+
+<Layout
+  siteTitle="MP's Blog"
+  description="My amazing awesome blog where I share some of my opitions and vent about random issues."
+>
+  <h2 class="text-center text-3xl font-bold underline my-4">Blog Posts</h2>
+  <ul class="flex justify-center mb-64 mx-2">
+    {
+      posts.map((post) => (
+        <BlogItem
+          title={post.data.title}
+          description={post.data.description}
+          category={post.data.category}
+          link={"/blog/" + post.id}
+          created={post.data.created}
+          updated={post.data.updated}
+        />
+      ))
+    }
+  </ul>
+</Layout>

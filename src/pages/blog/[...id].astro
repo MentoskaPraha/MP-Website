@@ -1,0 +1,24 @@
+---
+import Layout from "@layouts/Global.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { id: post.id },
+    props: { post }
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout
+  siteTitle=`${post.data.title} | MP's Blog`
+  description={post.data.description}
+>
+  <Content id="content" />
+</Layout>
+
+<style scoped></style>

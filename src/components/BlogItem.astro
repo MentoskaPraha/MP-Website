@@ -1,0 +1,24 @@
+---
+import dayjs from "dayjs";
+
+interface Props {
+  title: string;
+  description: string;
+  category: string;
+  link: string;
+  created: Date;
+  updated: Date | undefined;
+}
+
+const { title, description, link, category, created, updated } = Astro.props;
+---
+
+<li class="border-2 rounded-md p-2">
+  <a href={link} data-astro-prefetch>
+    <div class="sm:flex items-center">
+      <h3 class="underline font-bold text-xl">{title}</h3>
+      <p class="ml-auto">{category} - {dayjs(created).format("ddd D MMM YYYY")}</p>
+    </div>
+    <p class="">{description}</p>
+  </a>
+</li>
