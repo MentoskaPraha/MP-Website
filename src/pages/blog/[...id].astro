@@ -1,5 +1,7 @@
 ---
+import dayjs from "dayjs";
 import Layout from "@layouts/Global.astro";
+import Prose from "@layouts/Prose.astro";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
@@ -18,7 +20,28 @@ const { Content } = await render(post);
   siteTitle=`${post.data.title} | MP's Blog`
   description={post.data.description}
 >
-  <Content id="content" />
+  <div class="sm:flex items-center justify-center mx-4 text-center">
+    <p class="mx-8 select-text sm:hidden">{post.data.category}</p>
+    <p>
+      Created: <span class="select-text"
+        >{dayjs(post.data.created).format("ddd D MMM YYYY")}</span
+      >
+    </p>
+    <p class="mx-8 select-text hidden sm:flex">{post.data.category}</p>
+    <p>
+      Last Updated:
+      <span class="select-text"
+        >{
+          dayjs(
+            post.data.updated != undefined
+              ? post.data.updated
+              : post.data.created
+          ).format("ddd D MMM YYYY")
+        }</span
+      >
+    </p>
+  </div>
+  <Prose>
+    <Content/>
+  </Prose>
 </Layout>
-
-<style scoped></style>
