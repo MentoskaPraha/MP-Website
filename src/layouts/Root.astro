@@ -51,6 +51,13 @@ if (siteTitle != null) pageTitle = siteTitle;
     />
     <link rel="manifest" href="/favicon/site.webmanifest" />
 
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Your Site's Title"
+      href={new URL("rss.xml", Astro.site)}
+    />
+
     <meta name="description" content={description} />
     <title>{pageTitle}</title>
   </head>

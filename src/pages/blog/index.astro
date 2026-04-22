@@ -11,7 +11,7 @@ const posts = await getCollection("blog");
   description="My amazing awesome blog where I share some of my opitions and vent about random issues."
 >
   <h2 class="text-center text-3xl font-bold underline my-4">Blog Posts</h2>
-  <ul class="flex justify-center mb-64 mx-4">
+  <ul class="h-screen">
     {
       posts.map((post) => (
         <BlogItem
@@ -23,5 +23,6 @@ const posts = await getCollection("blog");
         />
       ))
     }
+    <p class="text-center">This is the end of the list. Scroll down for the footer.</p>
   </ul>
 </Layout>
