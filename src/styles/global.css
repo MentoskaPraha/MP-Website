@@ -1,6 +1,8 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
   --breakpoint-xs: 28.125rem;
   --breakpoint-xxs: 21.25rem;
+  --breakpoint-xsm: 42rem;
 }

@@ -17,6 +17,8 @@
     "src/**/*.ts",
     "src/**/*.astro",
     "src/**/*.svelte",
-    "./worker-configuration.d.ts"
+    "./worker-configuration.d.ts",
+    "src/pages/rss.xml.ts",
+    "src/pages/rss.xml.ts"
   ]
 }
