@@ -34,8 +34,8 @@ No contributions are accepted at this time. If you find an issue, feel free to r
     - description (should include technology)
     - image
     - links to source, the project and blog (if applicable)
-- [X] Blog Page
-  - [X] RSS feeds, ~~one for each type of blog post and one for everything~~, yeah no, just on feed is enough lol
+- [x] Blog Page
+  - [x] RSS feeds, ~~one for each type of blog post and one for everything~~, yeah no, just on feed is enough lol
   - [ ] A way to filter blog posts by type or project
   - [x] Each blog post is composed in Markdown
 - [ ] Anything else I forgor

@@ -14,19 +14,19 @@ Before my time, so around 1990-2010, blogs were all there was. The entire intern
 
 So other than a couple of nerds in their parents basement, most people stopped using blogs, which now that I think about is incredibly weird. These things are the perfect public journal. You have complete control over what goes on there and how it looks, there's no moderation on your own blog, you own it, you are the moderator. I can say whatever the f#ck I want and you can't do sh#t about it Mom! The point is that blogs are fully your own and a perfect way to share thought with a large audience.
 
-*cricket noises*
+_cricket noises_
 
 Which doesn't exist in my case, but some people do have it and yet no blogs. Everything has been compressed into 140 character status updates because nobody has the attention span to read more than that, which is a shame. Hence, this thing. A little blog for me to write about whatever, a small sh#t post, some technical documentation about something, a unique solution, a 3 paragraph complaint about something I can't influence or an actually meaningful and thought provoking article about the geopolitical state of the world and how that's reflected through the hit video game Minecraft. I'm not doing that last one.
 
 So since I never plan anything in too much detail, allow me to lay down a few very basic goals for this blog:
 
-  - [ ] Write about a movie
-  - [ ] Write about a game
-  - [ ] Write about an experience
-  - [ ] Document a project from start to finish
-  - [ ] Make a sh#t post
-  - [ ] Have something actually incredibly insightful and interesting
-  - [ ] Maybe a guest writer?
+- [ ] Write about a movie
+- [ ] Write about a game
+- [ ] Write about an experience
+- [ ] Document a project from start to finish
+- [ ] Make a sh#t post
+- [ ] Have something actually incredibly insightful and interesting
+- [ ] Maybe a guest writer?
 
 I'll check of these goals as I accomplish them. So yeah, that's it. If you were expecting something incredible, like New York Times level of writing, don't. I don't really do that.
 

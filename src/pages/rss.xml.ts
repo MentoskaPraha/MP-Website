@@ -14,7 +14,7 @@ export async function GET(context: APIContext) {
       description: post.data.description,
       pubDate: post.data.created,
       categories: [post.data.category],
-      link: `/blog/${post.id}`,
+      link: `/blog/${post.id}`
     })),
     stylesheet: "/rss_feed_stylesheet.xsl",
     customData: "<language>en-us</language>"
